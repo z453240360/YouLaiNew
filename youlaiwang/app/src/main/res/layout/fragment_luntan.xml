@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <TextView
+        android:background="#3398ff"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:text="视频播放"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/search"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="搜索你想要的内容"
+                android:padding="1dp"
+                android:textColor="#333"
+
+                android:textColorHint="#999"
+                android:textSize="14dp" />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lv_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:src="@mipmap/ic_launcher"
+        app:backgroundTint="#ff87ffeb"
+        app:rippleColor="#33728dff"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        />
+</LinearLayout>

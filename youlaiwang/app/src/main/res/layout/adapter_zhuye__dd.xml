@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:layout_marginLeft="5dp"
+    android:background="@drawable/yuanjiao_kuang"
+    android:layout_marginTop="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/mImg_zhuye"
+        app:layout_widthPercent="100%"
+        android:layout_width="0dp"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:id="@+id/mTxt_name"
+        android:text="排骨动画"
+
+        android:layout_alignLeft="@id/mImg_zhuye"
+        android:layout_alignRight="@id/mImg_zhuye"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_below="@id/mImg_zhuye"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/mTxt_name"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:text="18kuan一斤"
+            android:textColor="#EF6223"
+            android:id="@+id/mTxt_danwei"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+        <TextView
+            android:text="18一斤"
+            android:layout_marginLeft="5dp"
+            android:textSize="12sp"
+            android:id="@+id/mTxt_danwei2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dd"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/ll2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:src="@mipmap/gouwuche_dianpu"
+            android:text="18kuan一斤"
+            android:textColor="#EF6223"
+            android:id="@+id/dianpu"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+        <TextView
+            android:text="18一斤"
+            android:layout_marginLeft="5dp"
+            android:textSize="12sp"
+            android:id="@+id/storeId"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/img_add"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/ll_dd"
+        android:layout_width="30dp"
+        android:src="@mipmap/home_gouwuche"
+        android:layout_height="30dp"
+        />
+
+</android.support.percent.PercentRelativeLayout>

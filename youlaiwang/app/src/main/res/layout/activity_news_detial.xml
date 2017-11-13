@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_news_detial"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context="com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.activity.NewsDetialActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbars_longhu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/dongdong"
+        android:gravity="center"
+        android:popupTheme="@style/AppTheme">
+
+        <TextView
+            android:id="@+id/mTxt_longhu_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="新闻详情"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/mTxt_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/toolbars_longhu"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mTxt_title"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mTxt_title"
+            android:background="#ffffff">
+
+            <TextView
+                android:id="@+id/txt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text=""
+                android:textColor="#9c9c9c"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txt_seeNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/txt_time"
+                android:text=""
+                android:textColor="#9c9c9c"
+                android:textSize="12sp" />
+
+            <WebView
+                android:id="@+id/wb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_seeNum"
+                android:layout_marginTop="10dp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

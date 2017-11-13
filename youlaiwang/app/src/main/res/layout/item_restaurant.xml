@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/item_bg2"
+    android:paddingBottom="13dp"
+    android:paddingTop="10dp"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <com.bm.chengshiyoutian.youlaiwang.oldall.oldview.view.RoundImageView
+        android:id="@+id/photo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/touxiang" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
+
+        <RatingBar
+            android:id="@+id/ratingbar"
+            style="@style/roomRatingBar"
+            android:layout_marginTop="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="13dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="0" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="25dp"
+            android:background="@color/white_simple1"/>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_13"
+            android:drawableLeft="@mipmap/address_item"
+            android:drawablePadding="5dp"
+            android:textColor="@color/black_simple"
+            android:text="武汉市洪山区世界城广场5楼"/>
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@mipmap/phone_item"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:textColor="@color/black_simple"
+            android:text="027-12345678" />
+
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@mipmap/loction"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:textColor="@color/black_simple"
+            android:text="17.5km" />
+    </LinearLayout>
+
+</LinearLayout>

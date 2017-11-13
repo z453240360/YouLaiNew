@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/register_bg"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/act_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:text="商家负责人"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+
+            <EditText
+                android:id="@+id/et_principal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill"
+                android:hint="请输入您商家的负责人"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:text="负责人电话"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+
+            <EditText
+                android:id="@+id/et_principal_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill"
+                android:hint="请输入您负责人的电话"
+                android:inputType="number"
+                android:maxLength="11"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:text="商家电话"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+
+            <EditText
+                android:id="@+id/et_restaurant_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill"
+                android:hint="请输入您商家的电话"
+                android:inputType="number"
+                android:maxLength="11"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"/>
+
+            <LinearLayout
+                android:id="@+id/ll_store_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="10dp"
+                    android:text="商家图片"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+
+                <ImageView
+                    android:id="@+id/iv_store_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/up_photo"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="45dp"
+                android:background="@mipmap/button"
+                android:text="注 册"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

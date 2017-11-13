@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/changepsw_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/act_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/old_psw"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_18" />
+
+    <EditText
+        android:id="@+id/et_old_psw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/rectangle_bill"
+        android:hint="@string/input_old_psw"
+        android:inputType="textPassword"
+        android:maxLength="16"
+        android:paddingLeft="10dp"
+
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/text_size_15" />
+
+    <TextView
+        android:id="@+id/tv_v_psw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="3dp"
+        android:text="请输入6-16位密码"
+        android:textColor="@color/yello"
+        android:textSize="@dimen/text_size_13"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/new_psw"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_18" />
+
+    <EditText
+        android:id="@+id/ed_psw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/rectangle_bill"
+        android:hint="@string/input_psw"
+        android:inputType="textPassword"
+        android:maxLength="16"
+        android:paddingLeft="10dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/text_size_15" />
+
+    <TextView
+        android:id="@+id/tv_v_npsw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="3dp"
+        android:text="请输入6-16位密码"
+        android:textColor="@color/yello"
+        android:textSize="@dimen/text_size_13"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="5dp"
+        android:maxLength="16"
+        android:text="@string/new_psw_affirm"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_18" />
+
+    <EditText
+        android:id="@+id/ed_ensure_psw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/rectangle_bill"
+        android:hint="@string/input_psw_again"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/text_size_15" />
+
+    <TextView
+        android:id="@+id/tv_v_nspsw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="3dp"
+        android:text="两次密码不一致"
+        android:textColor="@color/yello"
+        android:textSize="@dimen/text_size_13"
+        android:visibility="invisible"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/yello"
+            android:textSize="@dimen/text_size_13" />
+
+        <Button
+            android:id="@+id/bt_ensure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:background="@mipmap/button"
+            android:text="@string/ensure"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_18" />
+    </RelativeLayout>
+</LinearLayout>

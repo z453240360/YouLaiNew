@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/m"
+    android:paddingRight="@dimen/m"
+    android:paddingTop="@dimen/m" >
+
+    <LinearLayout
+        android:background="@drawable/dialog_tip_bg"
+        android:layout_marginTop="@dimen/dp70"
+        android:layout_marginBottom="@dimen/dp70"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:minHeight="@dimen/dp300"
+        android:layout_height="wrap_content">
+
+        <!--@drawable/bg_dialogs-->
+        <RelativeLayout
+            android:background="@drawable/bg_dialogs11"
+            android:layout_marginTop="@dimen/dp48"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50">
+            <TextView
+                android:visibility="visible"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp24"
+                android:textColor="@color/dongdong"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <TextView
+            android:background="#fff"
+            android:text="需要先完成上一个订单支付"
+            android:gravity="top|center"
+            android:textSize="20sp"
+            android:textColor="#8a8a8a"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <View
+            android:background="#508a8a8a"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:background="@drawable/dialog_tip_bg1"
+            android:paddingTop="@dimen/dp20"
+            android:gravity="center_horizontal"
+            android:paddingBottom="@dimen/dp20"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+
+                android:id="@+id/pop_xiadan"
+                android:textColor="#ffa800"
+                android:textSize="@dimen/sp18"
+                android:background="@drawable/bg_dialogs_juhuang"
+                android:text="取消"
+                android:layout_width="@dimen/dp120"
+                android:layout_height="@dimen/dp45"/>
+
+            <Button
+                android:id="@+id/pop_gotogouwuche"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                android:background="@drawable/bg_dialogs_green"
+                android:text="去支付"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_width="@dimen/dp120"
+                android:layout_height="@dimen/dp45"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+
+        android:src="@mipmap/tanchuang_xiaoluobo"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_width="@dimen/dp180"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

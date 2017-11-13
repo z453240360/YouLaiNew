@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+              android:background="#fff"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/include_pickerview_topbar1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pickerview_topbar_height" />
+
+    <LinearLayout
+        android:layout_margin="@dimen/dp10"
+        android:id="@+id/timepicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+
+            android:id="@+id/month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/hour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/min"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginBottom="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp5"
+        android:textSize="@dimen/sp20"
+        android:gravity="center"
+        android:text="至"
+        android:textColor="@color/gray_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_margin="@dimen/dp10"
+        android:id="@+id/timepicker1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/year1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+
+            android:id="@+id/month1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/day1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/hour1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/min1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/second1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1" />
+    </LinearLayout>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginBottom="@dimen/dp10"
+           android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btnSubmit"
+                android:textSize="@dimen/sp16"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="确定"
+                android:layout_marginRight="@dimen/dp5"
+                android:background="@drawable/bt1"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="@dimen/dp80"
+                android:layout_height="@dimen/dp35"/>
+            <Button
+                android:id="@+id/btnCancel"
+                android:textSize="@dimen/sp16"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#0bb04a"
+                android:layout_marginLeft="@dimen/dp5"
+                android:background="@drawable/bt4"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="@dimen/dp80"
+                android:layout_height="@dimen/dp35"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

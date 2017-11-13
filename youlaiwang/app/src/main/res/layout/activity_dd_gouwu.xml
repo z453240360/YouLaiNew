@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".youlai_dd.activity.activity.GouwuActivity">
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/ll_kongGouWuChe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_gravity="center"
+            android:src="@drawable/konggouwuche"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dp21"
+            android:text="购物车空空如也"/>
+        <TextView
+            android:id="@+id/tv_xuanShangPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_gravity="center"
+            android:background="@drawable/xuanshangpin"
+            android:textColor="@color/dongdong2"
+            android:paddingLeft="@dimen/dp25"
+            android:paddingRight="@dimen/dp25"
+            android:paddingTop="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10"
+            android:textSize="@dimen/dp21"
+            android:text="去挑几件商品"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/isAllSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/gouwuche_xuanzhohng2" />
+
+        <TextView
+            android:layout_toRightOf="@id/isAllSelect"
+            android:layout_centerVertical="true"
+            android:id="@+id/quanxuan"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="全选" />
+
+        <TextView
+            android:id="@+id/line1"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/quanxuan"
+            android:background="#508a8a8a"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:drawableLeft="@mipmap/shanchu"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/btn_delete"
+            android:text="删除"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:background="#00555555"
+            android:layout_toRightOf="@id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/line2"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/btn_delete"
+            android:background="#508a8a8a"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent" />
+
+
+        <Button
+            android:textSize="14sp"
+            android:background="#fa6801"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/btn"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="去 结 算" />
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/line2"
+            android:layout_toLeftOf="@id/btn"
+            android:id="@+id/totP"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="合计:1000元" />
+
+
+
+    </RelativeLayout>
+
+
+    <ExpandableListView
+        android:id="@+id/expanded_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom"
+        android:layout_alignParentTop="true"
+        android:divider="#808a8a8a"
+        android:dividerHeight="0.5dp"
+        android:groupIndicator="@null"
+        android:scrollbars="none" />
+
+
+</RelativeLayout>

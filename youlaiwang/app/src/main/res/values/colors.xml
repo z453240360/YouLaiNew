@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="find_details_title_text">#333333</color>
+    <color name="integral_text">#666666</color>
+    <color name="text_bule">#037aff</color>
+    <!--侧滑菜单view颜色-->
+    <color name="menu_view">#306C43</color>
+    <color name="red">#f90376</color>
+    <color name="yello">#E2C743</color>
+    <color name="setting_view">#79A186</color>
+    <color name="hint">#809585</color>
+    <color name="black">#0bb04a</color>
+    <declare-styleable name="PullToRefresh">
+        <attr name="adapterViewBackground" format="reference|color" />
+        <attr name="pullHeaderBackground" format="reference|color" />
+        <attr name="headerTextColor" format="color" />
+        <attr name="mode">
+            <flag name="pullDownFromTop" value="0x1" />
+            <flag name="pullUpFromBottom" value="0x2" />
+            <flag name="both" value="0x3" />
+        </attr>
+    </declare-styleable>
+    <color name="white_simple">#BAC5BD</color>
+    <color name="white_simple1">#eaeaea</color>
+    <color name="white_simple2">#f9f6f6</color>
+    <!--浅黑-->
+    <color name="black_simple">#959595</color>
+    <!--浅灰色背景-->
+    <color name="gray_background">#F6F6F6</color>
+    <color name="orange">#CABE59</color>
+    <color name="green">#315B3F</color>
+    <color name="orange_deep">#EDD8AB</color>
+    <color name="view_back">#446B4E</color>
+    <color name="orange_back">#E4C743</color>
+    <color name="view_back_line">#F5F5F5</color>
+
+    <color name="text_white">#EEE9E9</color>
+    <color name="text_grey">#9F9F9F</color>
+    <color name="line">#508a8a8a</color>
+    <color name="text_black">#171717</color>
+    <color name="text_price">#F14343</color>
+    <color name="text_sgrey">#484848</color>
+    <color name="text_blue">#1F83FB</color>
+    <color name="text_red">#F03939</color>
+    <color name="cuxiaojia">#f74b00</color>
+    <color name="bg_gray">#F9F9F9</color>
+    <color name="white">#FFF</color>
+    <color name="gray_bg">#7E7F7E</color>
+    <color name="green_bg">#9BBFA7</color>
+    <color name="green_dialog">#317045</color>
+    <color name="gray_three">#F2F2F2</color>
+    <color name="text_color_black">#414141</color>
+    <color name="text_color_black_small">#909090</color>
+    <color name="bill_color">#769F83</color>
+    <color name="bill_write_gray">#356745</color>
+    <color name="gray_small">#C7C7C7</color>
+    <color name="time_text_gray">#7D8E81</color>
+    <color name="write_gray_line">#3E7A51</color>
+
+    <color name="red_version">#E47867</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <color name="viewfinder_mask">#66000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color>
+    <color name="text">#0bb04a</color>
+    <color name="text_hei">#707070</color>
+
+    <color name="dongdong2">#76c933</color>
+    <color name="dongdong">#ffa800</color>
+    <color name="dongdong_white">#ffffff</color>
+    <color name="dongdong_lightdark">#8a8a8a</color>
+    <color name="dongdong_null">#998a8a8a</color>
+
+    <!--打快点快点-->
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorOrg">#ffa800</color>
+
+
+
+    <color name="gray_list">#DEDEDE</color>
+
+
+
+    <color name="gray_list_item">#A0A0A0</color>
+
+
+
+</resources>
+

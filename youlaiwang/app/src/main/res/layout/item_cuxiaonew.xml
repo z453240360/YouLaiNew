@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+
+    android:background="#fff"
+    android:layout_width="match_parent"
+    app:layout_widthPercent="100%"
+    android:paddingBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_height="wrap_content"
+   >
+    <!--android:background="@drawable/yuanjiao_kuang"-->
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/image"
+            app:layout_widthPercent="100%"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp144"
+            android:src="@drawable/caomei" />
+        <TextView
+            app:layout_widthPercent="40%"
+            android:layout_below="@id/image"
+            android:id="@+id/title"
+            android:layout_alignLeft="@id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp3"
+            android:layout_marginTop="@dimen/dp10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="$102.00"
+            android:textColor="#000"
+            android:textSize="@dimen/dp14" />
+
+        <LinearLayout
+            android:layout_alignLeft="@id/image"
+            android:id="@+id/ll"
+            app:layout_widthPercent="40%"
+            android:layout_below="@id/title"
+            android:layout_marginBottom="3dp"
+            android:layout_width="@dimen/dp166"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp3"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$102.00"
+                android:textColor="@color/dongdong2"
+                android:textSize="@dimen/dp12" />
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/个/KG"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#999999"
+                android:textSize="@dimen/dp12" />
+
+            <ImageView
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/sahngp_gouwuche" />
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        android:background="#f2f2f2"></LinearLayout>
+
+
+</android.support.percent.PercentRelativeLayout>

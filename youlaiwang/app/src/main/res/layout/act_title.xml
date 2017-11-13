@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_title"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="#0bb04a"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded" >
+
+    <ImageView
+        android:id="@+id/iv_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:paddingLeft="13dp"
+        android:paddingRight="35dp"
+        android:src="@mipmap/qianduan_fanhui"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="19sp" />
+
+    <ImageView
+        android:id="@+id/iv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="15dp"
+        android:paddingLeft="30dp"
+        android:visibility="gone" />
+    <TextView 
+        android:id="@+id/tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:drawableLeft="@mipmap/address_yellow"
+        android:drawablePadding="3dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="17dp"
+        android:text="编辑"
+        android:textColor="@color/yello"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_right_two"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:drawablePadding="3dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="17dp"
+        android:text="编辑"
+        android:textColor="@color/yello"
+        android:visibility="gone"
+        />
+</RelativeLayout>

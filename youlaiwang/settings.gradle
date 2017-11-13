@@ -1,0 +1,2 @@
+include ':app', ':takephoto_library', ':sharesdk1', ':onekeyshare', ':sharesdk', ':pickerview'
+include ':Refreshlibrary'

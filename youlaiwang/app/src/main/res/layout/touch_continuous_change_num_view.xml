@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/iv_bill_data_jian"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/bill_jian"
+        android:paddingRight="10dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_bill_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="0"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_16"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_bill_data_jia"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/bill_jia"
+        android:paddingLeft="10dp"/>
+</LinearLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+    <!--@color/white_simple1-->
+
+    <include layout="@layout/act_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:visibility="visible">
+        <RelativeLayout
+            android:id="@+id/suozhen_timechoose"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@mipmap/baozhiqixianshurukuang"
+            android:orientation="horizontal"
+            android:layout_width="@dimen/dp200"
+            android:layout_height="@dimen/dp30">
+            <TextView
+                android:singleLine="true"
+                android:id="@+id/suozhen_riqi"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_centerVertical="true"
+                android:textColor="@color/gray_bg"
+                android:text="日期选择"
+                android:layout_width="@dimen/dp100"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp5"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/dizhi_xiugai"
+                android:layout_width="@dimen/dp15"
+                android:layout_height="@dimen/dp15"/>
+        </RelativeLayout>
+       <EditText
+           android:id="@+id/suozhen_guanjianci"
+           android:hint="请输入关键词"
+           android:layout_marginLeft="@dimen/dp8"
+           android:background="@mipmap/baozhiqixianshurukuang"
+           android:layout_gravity="center_vertical"
+           android:layout_weight="1"
+           android:layout_width="@dimen/dp200"
+           android:layout_height="@dimen/dp30"/>
+        <Button
+            android:id="@+id/suozhen_search"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginLeft="@dimen/dp10"
+            android:background="@drawable/green_btn_bg"
+            android:textColor="@android:color/white"
+            android:text="查询"
+            android:layout_width="@dimen/dp60"
+            android:layout_height="@dimen/dp30"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_biaoji"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_top"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="12dp"
+            android:background="@mipmap/shijianzhou" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="2016"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14" />
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:cacheColorHint="#00000000"
+        android:divider="@android:color/white"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        ptr:ptrHeaderBackground="#ffffff"
+        ptr:ptrMode="both" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/botton"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/white"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="累计采购总量"
+            android:textSize="@dimen/text_size_15" />
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:textColor="@color/menu_view"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_num"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@+id/tv_num"
+            android:text="@string/L"
+            android:textColor="@color/menu_view"
+            android:textSize="@dimen/text_size_13" />
+    </RelativeLayout>
+
+
+</LinearLayout>

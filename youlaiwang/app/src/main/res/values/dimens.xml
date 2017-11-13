@@ -1,0 +1,46 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="slidingmenu_offset">130dp</dimen>
+
+    <dimen name="pading_16">16dp</dimen>
+
+    <!-- 常规字体大小 -->
+    <dimen name="text_size_22">22sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_19">19sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_15">16sp</dimen>
+    <dimen name="text_size_14">16sp</dimen>
+    <dimen name="text_size_13">14sp</dimen>
+    <dimen name="text_size_12">14sp</dimen>
+    <dimen name="text_size_11">11sp</dimen>
+    <dimen name="text_size_10">10sp</dimen>
+
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="margin_top_fifteen">15dp</dimen>
+    <dimen name="margin_top_big">20dp</dimen>
+    <dimen name="home_width">30dp</dimen>
+    <dimen name="production_height">100dp</dimen>
+    <dimen name="picture_width">90dp</dimen>
+    <dimen name="picture_height">68dp</dimen>
+    <dimen name="product_size">35dp</dimen>
+    <dimen name="change_product_num">30dp</dimen>
+    <dimen name="height">5dp</dimen>
+
+
+    <!--间距-->
+    <dimen name="ss">1dp</dimen>
+    <dimen name="s">3dp</dimen>
+    <dimen name="m">6dp</dimen>
+    <dimen name="x">10dp</dimen>
+    <dimen name="xl">12dp</dimen>
+    <dimen name="xxl">16dp</dimen>
+    <dimen name="xxxl">30dp</dimen>
+    <dimen name="text_size_17">17sp</dimen>
+
+    <dimen name="list_height">300dp</dimen>
+
+</resources>

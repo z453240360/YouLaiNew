@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@mipmap/background_two"
+              android:orientation="vertical">
+
+    <include layout="@layout/act_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="@dimen/margin_top_fifteen"
+                    android:text="@string/restaurant_pic"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+                    <ImageView
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/mixing"
+                        />
+                </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="2dp"
+                android:text="(包括：营业执照、食品经营许可证及其他证件)"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_12"/>
+
+            <!--
+                android:layout_height="130dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="28dp"-->
+            <ImageView
+                android:id="@+id/iv_up_photo"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="6dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/register_upload_image"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_photo_view"
+                    android:layout_width="@dimen/picture_width"
+                    android:layout_height="@dimen/picture_height"
+                    android:layout_marginRight="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_photo"
+                        android:layout_width="@dimen/picture_width"
+                        android:layout_height="@dimen/picture_height"
+                        android:background="@mipmap/zhengjian_picture"/>
+
+                    <TextView
+                        android:id="@+id/tv_loading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="5dp"
+                        android:padding="10dp"
+                        android:text="正在加载中..."
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_size_12"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@mipmap/gray_square"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_top"
+                            android:background="@mipmap/picture"/>
+
+                        <TextView
+                            android:id="@+id/tv_photo_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="0张"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_size_12"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_add_photo"
+                    android:layout_width="@dimen/picture_width"
+                    android:layout_height="@dimen/picture_height"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/zhengshuicon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="点击上传"
+                        android:textColor="@color/orange"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/register_business_num"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+                <ImageView
+                    android:layout_marginTop="21dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/mixing"
+                    />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp">
+
+                <EditText
+                    android:id="@+id/et_business_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_bill"
+                    android:hint="@string/register_business_num_input"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/hint"
+                    android:textSize="@dimen/text_size_15"/>
+
+                <ImageView
+                    android:id="@+id/iv_shaomiao"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="10dp"
+                    android:src="@mipmap/shaomiao"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/register_business_expirydate"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+                <ImageView
+                    android:layout_marginTop="21dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/mixing"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_business_expirydate_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill"
+                android:hint="@string/register_business_expirydate_input"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/register_user_number"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+
+            <EditText
+                android:id="@+id/et_licenseNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill"
+                android:hint="@string/register_user_number_input"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"/>
+
+            <TextView
+                android:id="@+id/tv_food_expirydate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/register_user_expirydate"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+
+            <TextView
+                android:id="@+id/tv_user_expirydate_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill"
+                android:hint="@string/register_user_expirydate_input"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/restaurant_name"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/mixing"
+                    />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/et_restaurant_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill"
+                android:hint="@string/input_restaurant_name"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"/>
+
+            <TextView
+                android:id="@+id/tv_restaurant_name_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="3dp"
+                android:text="请填写餐厅名称"
+                android:textColor="@color/yello"
+                android:textSize="@dimen/text_size_13"
+                android:visibility="invisible"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/cooking_type"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+                <ImageView
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/mixing"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_cooking_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill_select"
+                android:drawableRight="@mipmap/jiantou1"
+                android:gravity="center_vertical"
+                android:hint="请选择所属主体业态"
+                android:paddingLeft="10dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"/>
+
+            <TextView
+                android:id="@+id/tv_cooking_type_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="3dp"
+                android:text="请选择菜系"
+                android:textColor="@color/yello"
+                android:textSize="@dimen/text_size_13"
+                android:visibility="gone"/>
+
+
+
+            <TextView
+                android:id="@+id/tv_restaurant_address_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="3dp"
+                android:text="请填写餐厅地址"
+                android:textColor="@color/yello"
+                android:textSize="@dimen/text_size_13"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/restaurant_phone"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/et_restaurant_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rectangle_bill"
+                android:hint="@string/input_restaurant_phone"
+                android:inputType="number"
+                android:maxLength="15"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="@dimen/text_size_15"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_restaurant_phone_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="3dp"
+                android:text="请填写正确的电话号码"
+                android:textColor="@color/yello"
+                android:textSize="@dimen/text_size_13"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/ll_store_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="35dp"
+                    android:text="请上传营业执照 (必选)"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+
+                <ImageView
+                    android:id="@+id/iv_store_photo"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/up_photo"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_register_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/yello"
+                android:textSize="@dimen/text_size_13"/>
+
+            <Button
+                android:id="@+id/bt_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="45dp"
+                android:background="@mipmap/button"
+                android:text="下一步"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

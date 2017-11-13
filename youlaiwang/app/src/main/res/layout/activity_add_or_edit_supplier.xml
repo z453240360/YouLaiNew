@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/register_bg"
+  >
+    <include layout="@layout/act_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="@dimen/margin_top_fifteen"
+        android:text="供应商证件"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_17"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/mixing"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="5dp"
+        android:text="(包括:营业执照、食品经营许可证、质检证或称质量检测报告、流通证及其他证件)"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/text_size_12"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="25dp"
+        >
+    <RelativeLayout
+        android:id="@+id/rl_photo_view"
+        android:layout_width="@dimen/picture_width"
+        android:layout_height="@dimen/picture_height"
+        android:layout_marginRight="10dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="@dimen/picture_width"
+            android:layout_height="@dimen/picture_height"
+            android:background="@mipmap/zhengjian_picture"/>
+        <TextView
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:text="正在加载中..."
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_12"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@mipmap/gray_square"
+            android:gravity="center_vertical"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_top"
+                android:background="@mipmap/picture"/>
+
+            <TextView
+                android:id="@+id/tv_photo_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="0张"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_12"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_add_photo"
+        android:layout_width="@dimen/picture_width"
+        android:layout_height="@dimen/picture_height"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/zhengshuicon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="点击上传"
+            android:textColor="@color/orange"
+            android:textSize="14sp"/>
+    </LinearLayout>
+    </LinearLayout>
+
+    <!--营业执照编号-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="20dp"
+            android:text="营业执照编号"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_17"/>
+        <ImageView
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/mixing"
+            />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="6dp">
+
+        <EditText
+            android:id="@+id/et_business_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_bill"
+            android:hint="请输入营业执照编号"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint"
+            android:textSize="@dimen/text_size_15"/>
+
+        <ImageView
+            android:id="@+id/iv_shaomiao"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="10dp"
+            android:src="@mipmap/shaomiao"/>
+    </RelativeLayout>
+    <!--供应商企业名称-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="20dp"
+            android:text="供应商企业名称"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_17"/>
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/mixing"
+            />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/et_restaurant_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/rectangle_bill"
+        android:hint="请输入供应商企业名称"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/text_size_15"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="@dimen/margin_top_fifteen"
+        android:text="@string/gongyingshang_contacts"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_17"/>
+
+    <EditText
+        android:id="@+id/et_contacts_persion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/rectangle_bill"
+        android:hint="请输入供应商联系人姓名"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/text_size_15"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="@dimen/margin_top_fifteen"
+            android:text="供应商电话"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_17"/>
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/mixing"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ed_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/rectangle_bill"
+        android:hint="@string/input_gongyingshang_phone"
+        android:maxLength="11"
+        android:paddingLeft="10dp"
+        android:phoneNumber="true"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="@dimen/text_size_15"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/bt_complete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@mipmap/huangsejuxingxhdpi"
+                    android:text="完成"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+
+                <Button
+                    android:id="@+id/bt_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@mipmap/button"
+                    android:text="删除"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

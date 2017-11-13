@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_tip_bg"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/m"
+    android:paddingRight="@dimen/m"
+    android:paddingTop="@dimen/m" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x"
+        android:layout_marginTop="@dimen/x"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/find_details_title_text" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/m"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_14"
+        android:textAppearance="?android:attr/textAppearance"
+        android:textColor="@color/integral_text" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/ss"
+        android:layout_marginRight="@dimen/ss"
+        android:layout_marginTop="@dimen/xxl"
+        android:background="#eeb3b3b3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/sure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:paddingBottom="@dimen/m"
+            android:paddingTop="@dimen/x"
+            android:text="确认"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="@color/text_bule"
+            tools:ignore="ButtonStyle" />
+
+        <View
+            android:id="@+id/fg"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#eeb3b3b3" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:paddingBottom="@dimen/m"
+            android:paddingTop="@dimen/x"
+            android:text="取消"
+            android:visibility="gone"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="@color/text_bule"
+            tools:ignore="ButtonStyle,HardcodedText" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="95dp">
+
+    <CheckBox
+        android:id="@+id/cb"
+        android:checked="false"
+        android:button="@drawable/gouwu"
+       android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true" />
+
+    <RelativeLayout
+        android:layout_marginLeft="15dp"
+        android:id="@+id/rl1"
+        app:layout_widthPercent="55%"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/cb"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="#161616"
+            android:id="@+id/mTxt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <TextView
+            android:textColor="#9d9d9d"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/mTxt_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/mTxt_title"
+            android:layout_below="@id/mTxt_title"
+            android:text="价格：" />
+
+        <TextView
+            android:textColor="#fa6801"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/mTxt_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mTxt_title"
+            android:layout_toRightOf="@id/mTxt_today"
+            android:text="" />
+
+        <TextView
+            android:textColor="#9d9d9d"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/mTxt_danwei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mTxt_title"
+            android:layout_toRightOf="@id/mTxt_money"
+            android:text="" />
+
+    </RelativeLayout>
+
+    <com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.view.AddView
+        android:layout_marginRight="10dp"
+        android:id="@+id/add_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/rl1"
+        android:layout_centerVertical="true"
+        ></com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.view.AddView>
+
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="#508a8a8a"
+        android:layout_height="0.5dp"
+        />
+</android.support.percent.PercentRelativeLayout>

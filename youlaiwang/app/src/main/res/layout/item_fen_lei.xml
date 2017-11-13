@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp106"
+    android:layout_height="@dimen/dp38">
+<LinearLayout
+    android:id="@+id/ll"
+    android:background="@drawable/fenleibg1"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="@dimen/dp38">
+    <ImageView
+        android:id="@+id/iv"
+        android:src="@drawable/qiezi_01"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/dp15"
+        android:layout_height="@dimen/dp15" />
+    <TextView
+
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="1dp"
+        android:textSize="@dimen/dp13"
+        android:textColor="#222"
+        android:id="@+id/tv"
+        android:text="蔬菜水果"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+</LinearLayout>

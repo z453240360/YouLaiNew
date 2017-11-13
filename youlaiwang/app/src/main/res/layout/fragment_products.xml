@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_classOne"
+        android:layout_marginBottom="2.5dp"
+        android:layout_marginTop="2.5dp"
+        android:layout_marginLeft="2.5dp"
+        android:layout_marginRight="2.5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@id/rc_classOne"
+        android:id="@+id/line2"
+        android:background="#508a8a8a"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_classTwo"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/line2" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:background="#fff"
+        android:layout_below="@id/line2"
+        android:layout_toRightOf="@id/rc_classTwo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <Button
+            android:background="@null"
+            android:id="@+id/btn_price"
+            android:text="价格"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:background="#508a8a8a"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:background="@null"
+            android:layout_weight="1"
+            android:id="@+id/btn_new"
+            android:text="新品"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:background="#508a8a8a"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:background="@null"
+            android:layout_weight="1"
+            android:id="@+id/btn_pro"
+            android:text="促销"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:background="#508a8a8a"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:background="@null"
+            android:layout_weight="1"
+            android:id="@+id/btn_near"
+            android:text="附近"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@id/ll"
+        android:layout_toRightOf="@id/rc_classTwo"
+        android:id="@+id/line"
+        android:background="#508a8a8a"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line"
+        android:layout_toRightOf="@id/rc_classTwo" />
+
+
+
+
+</RelativeLayout>

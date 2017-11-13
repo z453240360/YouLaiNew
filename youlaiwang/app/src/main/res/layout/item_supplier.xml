@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rl_all"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+    <CheckBox
+        android:id="@+id/cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:button="@drawable/supplier_selector"
+        />
+    <TextView
+        android:id="@+id/tv_supplier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京市宣武区供应商"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/cb"
+        />
+    <ImageView
+        android:id="@+id/iv_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone"
+        android:background="@mipmap/paixuxhdpi"
+        android:layout_alignParentRight="true"
+        />
+
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/bianjixhdpi"
+       android:layout_alignParentRight="true"
+        android:layout_marginTop="23dp"
+        android:paddingLeft="10dp"
+       android:paddingRight="10dp"
+        />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray_small"
+        android:layout_below="@id/rl"
+        />
+</RelativeLayout>

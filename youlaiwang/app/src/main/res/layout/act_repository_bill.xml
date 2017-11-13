@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_three"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/act_title"/>
+
+    <LinearLayout
+        android:id="@+id/ll_production_ru_ku"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/production_height"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/product_size"
+            android:layout_height="@dimen/product_size"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/rukuicon"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/fengexian_three"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:id="@+id/tv_provider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="生产商品入库"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_16"/>
+
+            <TextView
+                android:id="@+id/tv_provider_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="提示:生产商品入库票证及明细信息"
+                android:textColor="@color/text_color_black_small"
+                android:textSize="@dimen/text_size_12"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/jiantouhui"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_production_sell"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/production_height"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/product_size"
+            android:layout_height="@dimen/product_size"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/chukuicon"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/fengexian_three"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="生产商品出库/销售"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_16"/>
+
+            <TextView
+                android:id="@+id/tv_account_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="提示:生产商品出库/销售票证及明细信息"
+                android:textColor="@color/text_color_black_small"
+                android:textSize="@dimen/text_size_12"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/jiantouhui"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_product_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/production_height"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/product_size"
+            android:layout_height="@dimen/product_size"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/kucunicon"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/fengexian_three"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:id="@+id/tv_no_hege"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="生产商品库存"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_16"/>
+
+            <TextView
+                android:id="@+id/tv_no_hege_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="提示:生产商品库存明细"
+                android:textColor="@color/text_color_black_small"
+                android:textSize="@dimen/text_size_12"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/jiantouhui"/>
+    </LinearLayout>
+
+</LinearLayout>

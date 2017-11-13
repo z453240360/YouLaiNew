@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/act_title"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <EditText
+        android:id="@+id/et_suppliername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入供应商企业名称"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bg_each"
+        />
+    <ImageView
+        android:id="@+id/iv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/search"
+        android:layout_centerVertical="true"
+       android:paddingRight="20dp"
+       android:paddingLeft="20dp"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_supplier"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="160dp"
+                  android:layout_centerHorizontal="true"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="点击新增按钮，可填写本店供应商信息"
+                        android:textSize="@dimen/text_size_16"
+                        android:textColor="@color/text_grey"
+                        />
+                        <TextView
+                            android:id="@+id/tv_add_supplier"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="新增供应商"
+                            android:textSize="@dimen/text_size_18"
+                            android:background="@drawable/dotted_line"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:drawableLeft="@mipmap/zengjiaxhdpi"
+                            android:drawablePadding="8dp"
+                            android:textColor="@color/green_dialog"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+
+                            />
+                </LinearLayout>
+
+        </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+    <com.bm.chengshiyoutian.youlaiwang.oldall.oldview.view.MyListView
+        android:id="@+id/lv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:listSelector="#00000000"
+        android:scrollbars="none"
+        />
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="新增"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@mipmap/juxing1xhdpi"
+            />
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="下一步"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@mipmap/juxing2xhdpi"
+            />
+    </LinearLayout>
+
+</LinearLayout>

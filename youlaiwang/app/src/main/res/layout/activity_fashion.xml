@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fashion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bm.chengshiyoutian.youlaiwang.activity.FashionActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbars_longhu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/dongdong"
+        android:gravity="center"
+        android:popupTheme="@style/AppTheme">
+
+        <TextView
+            android:id="@+id/mTxt_longhu_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="公告列表"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <RadioGroup
+        android:id="@+id/mRg_longhu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_below="@id/toolbars_longhu"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/mRb_longhu_geren"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:tag="0"
+            android:background="@drawable/radio_backgroudcolor"
+            android:text="政府公告"
+            android:textColor="@drawable/radiobutton_color"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/mRb_longhu_tuandui"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:tag="1"
+            android:background="@drawable/radio_backgroudcolor"
+            android:text="最新动态"
+            android:textColor="@drawable/radiobutton_color"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+
+
+    <FrameLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/frame_longhu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/mRg_longhu" />
+
+
+</RelativeLayout>

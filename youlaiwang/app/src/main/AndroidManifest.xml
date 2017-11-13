@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bm.chengshiyoutian.youlaiwang">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 分享 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <permission
+        android:name="${applicationId}.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- android:theme="@style/Theme.AppCompatpat.Light.NoActionBar"> -->
+    <!-- 支付宝 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 扫描二维码 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/c"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- <activity android:name=".youlai_dd.activity.FirstActivity"></activity> -->
+        <!-- <activity android:name=".activity.StartActivity"> -->
+        <!-- <activity android:name=".activity.StartActivity"> -->
+        <!-- <activity android:name=".youlai_dd.activity.activity.TotalActivity"></activity> -->
+
+        <activity android:name=".youlai_dd.activity.activity.TotalActivity" />
+        <activity android:name=".youlai_dd.activity.FirstActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.ZhaoHuiMIMaActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.ChangePasswordActivity" />
+        <activity android:name=".activity.ChangeUserNameActivity" />
+        <activity android:name=".activity.MyAddressActivity" />
+        <activity android:name=".activity.AddAddressActivity" />
+        <activity
+            android:name=".activity.QiYeRenZhengActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.JuBaoJiLuActivity" />
+        <activity
+            android:name=".activity.WoDeDingDanActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.ShangPinShouCangActivity" />
+        <activity android:name=".activity.DianPuShouCangActivity" />
+        <activity android:name=".activity.GouMaiShangPinActivity" />
+        <activity android:name=".activity.GouMaiDianPuActivity" />
+        <activity android:name=".activity.TouSuJuBaoActivity" />
+        <activity android:name=".activity.XiTongTiXingActivity" />
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.ShangPinSouSuoActivity" />
+        <activity android:name=".activity.DianPuShouYeActivity" />
+        <activity android:name=".activity.ShangPinLieBiaoAcitivity" />
+        <activity android:name=".activity.ShangPinFenLeiActivity" />
+        <activity android:name=".activity.DianPuXiangQingActivity" />
+        <activity android:name=".activity.ChangJianWenTiActivity" />
+        <activity android:name=".activity.XiuGaiDiZhiActivity" />
+        <activity android:name=".activity.ShangPinXiangQingActivity" />
+        <activity android:name=".youlai_dd.activity.activity.GouwuActivity" />
+        <activity android:name=".youlai_dd.activity.activity.LastWeekActivity_dd" />
+        <activity
+            android:name=".activity.XiangQingActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.SearchActivity" />
+        <activity
+            android:name=".activity.QueRenDingDanActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".activity.QuYuActivityNew" />
+        <activity
+            android:name=".activity.KuaiSuXiaDanActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.GouWuCheActivity" />
+        <activity android:name=".activity.GouMaiJiLuActivity" />
+        <activity android:name=".activity.PicActivity" />
+        <activity android:name=".activity.PingJiaActivity" />
+        <activity android:name=".activity.DingDanXiangQingActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity
+            android:name=".activity.QiYeRenZhengActivitynew"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 定位key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="8f8b5620c8a69751ca432052317db10e" />
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService" />
+        <service
+            android:name=".oldall.oldview.services.CacheImageService"
+            android:exported="false" />
+        <service
+            android:name=".oldall.oldview.services.GrayService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <!-- 分享 -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent1104646053" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 调用新浪原生SDK，需要注册的回调activity -->
+        <intent-filter>
+            <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 老版本activity -->
+
+
+        <!-- 主界面 -->
+        <activity
+            android:name=".oldall.oldview.activity.MainActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 引导界面 -->
+        <activity
+            android:name=".oldall.oldview.activity.LeaderPagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <!-- 设置界面 -->
+        <activity
+            android:name=".oldall.oldview.activity.SettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 关于界面 -->
+        <activity
+            android:name=".oldall.oldview.activity.AboutActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 意见反馈 -->
+        <activity
+            android:name=".oldall.oldview.activity.FeedbackActivitiy"
+            android:screenOrientation="portrait" />
+        <!-- 帮助 -->
+        <activity
+            android:name=".oldall.oldview.activity.HelpActivity"
+            android:screenOrientation="portrait" />
+        <!-- 消息 -->
+        <activity
+            android:name=".oldall.oldview.activity.MessageActivity"
+            android:screenOrientation="portrait" />
+        <!-- 修改密码 -->
+        <activity
+            android:name=".oldall.oldview.activity.ChangePswActivity"
+            android:screenOrientation="portrait" />
+        <!-- 登陆 -->
+        <activity
+            android:name=".oldall.oldview.activity.LoginActivtiy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 注册 -->
+        <activity
+            android:name=".oldall.oldview.activity.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <!-- 注册下一步 -->
+        <activity
+            android:name=".oldall.oldview.activity.RegisterNextActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 公告 -->
+        <activity
+            android:name=".oldall.oldview.activity.NoticeActivity"
+            android:screenOrientation="portrait" />
+        <!-- 公告详情 -->
+        <activity
+            android:name=".oldall.oldview.activity.NoticeDetailsActivity"
+            android:screenOrientation="portrait" />
+        <!-- 食用油采购 -->
+        <activity
+            android:name=".oldall.oldview.activity.CookingOilDeclareActivity"
+            android:screenOrientation="portrait" />
+        <!-- 地沟油申报 -->
+        <activity
+            android:name=".oldall.oldview.activity.RefuseOilDeclareActivity"
+            android:screenOrientation="portrait" />
+        <!-- 采购记录 -->
+        <activity
+            android:name=".oldall.oldview.activity.ProcurementRecordActivity"
+            android:screenOrientation="portrait" />
+        <!-- 交油记录 -->
+        <activity
+            android:name=".oldall.oldview.activity.DeclareRecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 我的餐厅 -->
+        <activity
+            android:name=".oldall.oldview.activity.MyRestaurantActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 编辑资料 -->
+        <activity
+            android:name=".oldall.oldview.activity.EditInfoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 附近餐厅 -->
+        <activity
+            android:name=".oldall.oldview.activity.NearRestaurantActivity"
+            android:screenOrientation="portrait" />
+        <!-- 餐厅详情 -->
+        <activity
+            android:name=".oldall.oldview.activity.ResturantDetaisActivity"
+            android:screenOrientation="portrait" />
+        <!-- 用户评论 -->
+        <activity
+            android:name=".oldall.oldview.activity.UserCommentActivity"
+            android:screenOrientation="portrait" />
+        <!-- 忘记密码 -->
+        <activity
+            android:name=".oldall.oldview.activity.ForgetPswActivity"
+            android:screenOrientation="portrait" />
+        <!-- 二维码 -->
+        <activity
+            android:name=".oldall.oldview.activity.QRCodeActivity"
+            android:screenOrientation="portrait" />
+        <!-- 城市列表 -->
+        <activity
+            android:name=".oldall.oldview.activity.CityActivity"
+            android:screenOrientation="portrait" />
+        <!-- 转换比例 -->
+        <activity
+            android:name=".oldall.oldview.activity.ConversionRatioActivity"
+            android:screenOrientation="portrait" />
+        <!-- 转换比例 -->
+        <activity
+            android:name=".oldall.oldview.activity.SearchActivity"
+            android:screenOrientation="portrait" />
+        <!-- 团购 -->
+        <activity
+            android:name=".oldall.oldview.activity.GroupBuyActivity"
+            android:screenOrientation="portrait" />
+        <!-- 采购分析 -->
+        <activity
+            android:name=".oldall.oldview.activity.ProcurementAnalyzeActivity"
+            android:screenOrientation="portrait" />
+        <!-- 索证索票 -->
+        <activity
+            android:name=".oldall.oldview.activity.DemandingCertificatesActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 台帐明细 -->
+        <activity
+            android:name=".oldall.oldview.activity.AccountDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 索证索票记录 -->
+        <activity
+            android:name=".oldall.oldview.activity.SuoZhengSuoPiaoRecordActivity"
+            android:screenOrientation="portrait" />
+        <!-- 注册第三步 -->
+        <activity
+            android:name=".oldall.oldview.activity.RegisterThirdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 生产 -->
+        <activity
+            android:name=".oldall.oldview.activity.ProductionActivity"
+            android:screenOrientation="portrait" />
+        <!-- 索证索票 三期 -->
+        <activity
+            android:name=".oldall.oldview.activity.DemandingCertificatesThreeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 原料票据 -->
+        <activity
+            android:name=".oldall.oldview.activity.OriginalBillActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 保质期限 -->
+        <activity
+            android:name=".oldall.oldview.activity.QualityGuaranteePeriodActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 仓库台账 -->
+        <activity
+            android:name=".oldall.oldview.activity.RepositoryBillActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 仓库台账(入库) -->
+        <activity
+            android:name=".oldall.oldview.activity.RepositoryBillRuKuActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 仓库台账(销售) -->
+        <activity
+            android:name=".oldall.oldview.activity.RepositoryBillSellActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <activity
+            android:name=".oldall.oldview.activity.RepositoryBillShipmentActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+
+        <!-- 仓库台账(仓库库存) -->
+        <activity
+            android:name=".oldall.oldview.activity.RepositoryBillSaveActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 不合格 临期产品 -->
+        <activity
+            android:name=".oldall.oldview.activity.PastTimeProductActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemePersionmessage" />
+        <!-- 消息 -->
+        <activity
+            android:name=".oldall.oldview.activity.NewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".oldall.oldview.pic.TestPicActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".oldall.oldview.pic.ImageGridActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".oldall.oldview.pic.PublishedActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".oldall.oldview.pic.PhotoActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+
+        <!-- 扫描 -->
+        <activity
+            android:name=".oldall.oldview.zxing.CaptureActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".oldall.oldview.activity.SupplierOrLedgerActivity" />
+        <activity android:name=".oldall.oldview.activity.AddOrEditSupplierActivity" />
+        <activity
+            android:name=".oldall.oldview.activity.SupplyBillActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize|stateAlwaysHidden" />
+        <activity
+            android:name=".oldall.oldview.activity.NewAccountDetailActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".oldall.oldview.activity.AccountDetailNextActivity" />
+        <activity android:name=".oldall.oldview.activity.AccountDetailThirdActivity" />
+        <activity android:name=".oldall.oldview.activity.OtherFoodsLevelActivity" />
+        <activity
+            android:name=".oldall.oldview.activity.DeclareConfirmActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".oldall.oldview.activity.DeclareInventoryActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".oldall.oldview.activity.QualityGuaranteeOrBatchNumActivity" />
+        <activity android:name=".oldall.oldview.activity.HelpNewActivity" />
+        <activity android:name=".oldall.oldview.activity.HelpDetailActivity" />
+        <activity android:name=".oldall.oldview.activity.PDFActivity" />
+        <activity android:name=".oldall.oldview.activity.VideoActivity" />
+        <activity android:name=".activity.ZhuCeXieyiActivity" />
+        <activity android:name=".oldall.oldview.activity.SuoZhenSuoPiaoListActivity" />
+        <activity android:name=".activity.XIangQingActivity1" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.GouMaiDialogActivity"
+            android:theme="@style/dialog" />
+        <activity android:name=".activity.ZhiFuFangShiActivity" />
+        <activity android:name=".youlai_dd.activity.activity.Login_ddActivity" />
+        <activity android:name=".activity.GongGaoActivity" />
+        <activity android:name=".youlai_dd.activity.BaseActivity" />
+        <activity android:name=".youlai_dd.activity.NativeActivity" />
+        <activity android:name=".activity.FashionActivity" />
+        <activity android:name=".youlai_dd.activity.activity.NewsDetialActivity" />
+        <activity android:name=".youlai_dd.activity.activity.RegisterActivity" />
+        <activity android:name=".activity.MiddleActivity" />
+        <activity android:name=".youlai_dd.activity.activity.GouMaiHestoryActivity" />
+        <activity android:name=".youlai_dd.activity.activity.MyLastActivity" />
+        <activity android:name=".youlai_dd.activity.activity.BuyRecodeActivity" />
+        <activity android:name=".youlai_dd.activity.activity.dd_MainActivity" />
+        <activity android:name=".youlai_dd.activity.activity.ProductDetiaActivity" />
+        <activity android:name=".youlai_dd.activity.activity.MyOrderActivity" />
+        <activity android:name=".youlai_dd.activity.activity.HistoryActivity"></activity>
+    </application>
+
+</manifest>

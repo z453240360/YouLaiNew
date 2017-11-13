@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+        <TextView
+            android:textSize="@dimen/dp15"
+            android:textColor="#000"
+           android:gravity="center"
+            android:text="提示信息"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"/>
+
+
+
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/pop_lv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/pop_xiadan"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp20"
+            android:text="继续下单"
+            android:background="@color/dongdong"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/pop_gotogouwuche"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp20"
+            android:text="返回购物车"
+            android:background="@color/dongdong"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

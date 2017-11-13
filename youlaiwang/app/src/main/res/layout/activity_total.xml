@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_total"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.activity.TotalActivity">
+
+
+
+    <RadioGroup
+        android:layout_alignParentBottom="true"
+        android:id="@+id/mRg_main"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb1_main"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:tag="0"
+            android:background="@drawable/radio_backgroudcolor"
+            android:text="首页"
+            android:textColor="@drawable/radiobutton_color"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb1_product"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:tag="1"
+            android:background="@drawable/radio_backgroudcolor"
+            android:text="商品"
+            android:textColor="@drawable/radiobutton_color"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb1_shopCar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:tag="2"
+            android:background="@drawable/radio_backgroudcolor"
+            android:text="购物车"
+            android:textColor="@drawable/radiobutton_color"
+            android:textSize="14sp" />
+
+
+        <RadioButton
+            android:id="@+id/mRb_longhu_tuandui"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:tag="3"
+            android:background="@drawable/radio_backgroudcolor"
+            android:text="我的"
+            android:textColor="@drawable/radiobutton_color"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:layout_above="@id/mRg_main"
+        android:id="@+id/frame_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+</RelativeLayout>

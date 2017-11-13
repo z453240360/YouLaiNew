@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/m"
+    android:paddingRight="@dimen/m"
+    android:paddingTop="@dimen/m" >
+    
+
+
+    <LinearLayout
+        android:background="@drawable/dialog_tip_bg"
+        android:layout_marginTop="@dimen/dp70"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:background="@drawable/bg_dialogs"
+            android:layout_marginTop="@dimen/dp48"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50">
+            <TextView
+                android:visibility="visible"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp24"
+                android:textColor="@color/dongdong"
+                android:layout_centerInParent="true"
+                android:text="发现新版本"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <ListView
+            android:paddingTop="@dimen/dp16"
+            android:background="@android:color/white"
+            android:paddingBottom="@dimen/dp16"
+            android:id="@+id/message"
+            android:textSize="@dimen/sp13"
+            android:textColor="#555"
+            android:paddingLeft="@dimen/dp29"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp180"/>
+
+        <View
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/dp15"
+            android:background="@drawable/dialog_tip_bg1"
+            android:paddingBottom="@dimen/dp20"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+
+                android:id="@+id/cancel"
+                android:textColor="#000"
+                android:textSize="@dimen/sp18"
+                android:background="#308a8a8a"
+                android:text="忽略"
+                android:layout_width="@dimen/dp120"
+                android:layout_height="@dimen/dp45"/>
+            <Button
+                android:id="@+id/sure"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                android:background="@color/dongdong"
+                android:text="立即更新"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_width="@dimen/dp120"
+                android:layout_height="@dimen/dp45"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:src="@mipmap/peitu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

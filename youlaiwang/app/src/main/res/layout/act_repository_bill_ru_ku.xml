@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/refuse_bg"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/act_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="@dimen/margin_top_fifteen"
+                android:text="明细"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="1dp"
+                android:text="@string/mingxi_edit"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_12"/>
+
+            <com.bm.chengshiyoutian.youlaiwang.oldall.oldview.view.MyListView
+                android:id="@+id/lv_mingxi_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp"
+                android:overScrollMode="never"
+                android:scrollbars="none"/>
+
+            <TextView
+                android:id="@+id/tv_add_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="@dimen/margin_top"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:text="@string/new_data"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_14"/>
+
+            <LinearLayout
+                android:id="@+id/ll_baozhiqixian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/rectangle_bill"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保质期限(非必填)"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_size_17"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="点击添加保质期"
+                    android:textColor="@color/hint"
+                    android:textSize="@dimen/text_size_14"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/youjianhou_two"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="120dp"
+                android:background="@mipmap/button"
+                android:text="提交"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_17"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
