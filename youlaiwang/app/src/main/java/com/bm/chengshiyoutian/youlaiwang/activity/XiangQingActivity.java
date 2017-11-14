@@ -204,6 +204,7 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
         if (banner != null) {
             banner.onStartChange();
         }
+
         if (!MyUtils.isEmpty(MyApplication.getInstance().getUser().id)) {
             isExistNewInfo(MyApplication.getInstance().getUser().id);
         }
@@ -525,6 +526,9 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
     private void isExistNewInfo(String userId) {
         LinkedHashMap<String, String> params = new LinkedHashMap<String, String>();
         params.put("userid", userId);
+
+
+
         InternetConfig config = new InternetConfig();
         config.setKey(2);
         config.setTimeout(Constants.TIMEOUT);

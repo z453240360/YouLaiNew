@@ -137,7 +137,7 @@ public class Login_ddActivity extends AppCompatActivity implements IMainView {
                     ShowToast.showToast("请输入密码");
                     return;
                 } else {
-                    login();
+//                    login();
                     present.getLogin(phoneNumber, userPassword);
                 }
 
@@ -210,23 +210,14 @@ public class Login_ddActivity extends AppCompatActivity implements IMainView {
             edit.putString(MyRes.TOKEN, token);
             edit.putString(MyRes.MY_TOKEN, "Bearer " + token);
             edit.commit();
-//            this.setResult(201);
             SPUtil.put(this, Constants.PHONENUM, phoneNum.getText().toString().trim());
-            finish();
+            login();
+            dialogs.show();
+//            finish();
         }
     }
 
-//    //点击返回
-//    @Override
-//    public boolean onKeyUp(int keyCode, KeyEvent event) {
-//        // TODO Auto-generated method stub
-//        switch (keyCode) {
-//            case KeyEvent.KEYCODE_BACK:
-//                startActivity(new Intent(this,MainActivity.class));
-//                break;
-//        }
-//        return super.onKeyUp(keyCode, event);
-//    }
+
 
     /**
      * 登录验证
@@ -270,6 +261,7 @@ public class Login_ddActivity extends AppCompatActivity implements IMainView {
             case 1:
                 try {
                     JSONObject jsonObject = new JSONObject(entity.getContentAsString());
+                    dialogs.dismiss();
                     if (jsonObject.optInt("status") == 0) {
                         JSONObject object = jsonObject.optJSONObject("data").optJSONArray("ds").getJSONObject(0);
                         String id = object.optString("id"); //餐厅id
@@ -395,7 +387,7 @@ public class Login_ddActivity extends AppCompatActivity implements IMainView {
     @InjectHttpErr
     private void err(ResponseEntity entity) {
 
-
+        dialogs.dismiss();
         MyToastUtils.show(this, "网络错误");
     }
 
