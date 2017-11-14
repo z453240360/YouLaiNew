@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -34,6 +35,7 @@ import com.android.pc.ioc.internet.FastHttpHander;
 import com.android.pc.ioc.internet.InternetConfig;
 import com.android.pc.ioc.internet.ResponseEntity;
 import com.bm.chengshiyoutian.youlaiwang.R;
+import com.bm.chengshiyoutian.youlaiwang.Utils.MyRes;
 import com.bm.chengshiyoutian.youlaiwang.app.MyApplication;
 import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.activity.*;
 import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.banner.MainBannerView;
@@ -48,6 +50,8 @@ import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.utils.MyUtils;
 import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.utils.SPUtil;
 import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.view.RoundImageView;
 import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.view.TipDialog;
+import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.model.IMainView;
+import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.model.Present;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.yanzhenjie.permission.AndPermission;
 
@@ -70,7 +74,7 @@ import butterknife.ButterKnife;
  * Created by sld on 2017/5/2.
  */
 
-public class XiangQingActivity extends Activity implements View.OnClickListener, AMapLocationListener {
+public class XiangQingActivity extends Activity implements View.OnClickListener, AMapLocationListener,IMainView {
 
 
     private static final String TAG = "MainActivity";
@@ -158,16 +162,25 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
     private String mStatesAction;
     private int mExistNewAd = 0;
 
+    private Present present;
+    private SharedPreferences sp;
+    private String token;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xiangqing);
         ButterKnife.bind(this);
+        sp = getSharedPreferences(MyRes.CONFIG,0);
+        token = sp.getString(MyRes.MY_TOKEN, "");
+        present = new Present(this);
         init();
        /* checkUpdate();
         if (!MyUtils.isEmpty(MyApplication.getInstance().getUser().id)) {
             getInfoData();
         }*/
+
+        present.getResMessage(token);
     }
 
     @Override
@@ -176,7 +189,11 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
         if (bannerList == null || bannerList.size() == 0) {
             getBannerData();
         }
+
+
         String message = SPUtil.getString(this, Constants.NOTICE_MESSAGE); //通知栏的信息内容
+
+
         if (!TextUtils.isEmpty(message)) {
             mStatesAction = SPUtil.getString(this, "statesAction");
             declareOil(message);//是否交油
@@ -190,6 +207,8 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
         if (!MyUtils.isEmpty(MyApplication.getInstance().getUser().id)) {
             isExistNewInfo(MyApplication.getInstance().getUser().id);
         }
+
+
         //判断是否登录  未登录状态
         //if (!SPUtil.getBoolean(this, Constants.IS_LOGIN)) {
         if (TextUtils.isEmpty(MyApplication.getInstance().getUser().id)) {
@@ -199,12 +218,11 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
             appRatingbar.setRating(0);
             photo.setImageResource(R.mipmap.peoson);
         } else {
-            tvRight.setText(MyApplication.getInstance().getUser().integral);
+            tvRight.setText(MyApplication.getInstance().getUser().integral);//100
             tvLogout.setText(getString(R.string.logout));
 
             RestaurantBean bean = MyApplication.getInstance().getUser();
             tvStoreName.setText(bean.restaurantName);
-
 
             ImageLoader.getInstance().displayImage(bean.photoUrl, photo, MyApplication.getInstance().getIconOptions());
             if (!TextUtils.isEmpty(bean.grade)) {
@@ -527,7 +545,6 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
 
     @InjectHttp
     private void injectHttp(ResponseEntity entity) {
-        Log.i(TAG, entity.toString());
         switch (entity.getKey()) {
             case 0:
                 try {
@@ -704,7 +721,6 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
         latitude = aMapLocation.getLatitude();
         longitude = aMapLocation.getLongitude();
         cityName = aMapLocation.getCity();
-        Log.i("id", latitude + "sss" + longitude + "--" + cityName);
     }
 
     @InjectHttpErr
@@ -809,7 +825,6 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
         IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
         completeReceiver = new CompleteReceiver();
         File f = new File(dir, "update.apk");
-//        File f = new File(dir, "update.jpg");
         completeReceiver.save_path = f.getAbsolutePath();
         if (f.exists()) {
             f.delete();
@@ -845,6 +860,38 @@ public class XiangQingActivity extends Activity implements View.OnClickListener,
         config.setToDefaults();
         res.updateConfiguration(config, res.getDisplayMetrics());
         return res;
+    }
+
+
+    //获取企业认证的信息
+    @Override
+    public void getCode(String s) {
+        Log.i("dd", "getCode: "+s);
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void cancelLoading() {
+
+    }
+
+    @Override
+    public void showFaliure(String s) {
+
+    }
+
+    @Override
+    public void getLogin(String s) {
+
+    }
+
+    @Override
+    public void getUpDate(String s) {
+
     }
 
     private class CompleteReceiver extends BroadcastReceiver {

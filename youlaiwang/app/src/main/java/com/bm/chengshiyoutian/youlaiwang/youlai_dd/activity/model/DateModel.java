@@ -1,9 +1,17 @@
 package com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.model;
 
 
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.bm.chengshiyoutian.youlaiwang.R;
@@ -12,9 +20,13 @@ import com.bm.chengshiyoutian.youlaiwang.Utils.GsonUtils;
 import com.bm.chengshiyoutian.youlaiwang.Utils.MyRes;
 import com.bm.chengshiyoutian.youlaiwang.Utils.ShowToast;
 import com.bm.chengshiyoutian.youlaiwang.activity.MainActivity;
+import com.bm.chengshiyoutian.youlaiwang.activity.QiYeRenZhengActivity;
 import com.bm.chengshiyoutian.youlaiwang.adapter.DingDan2Adapter1;
+import com.bm.chengshiyoutian.youlaiwang.adapter.QiYeRCAdapter;
+import com.bm.chengshiyoutian.youlaiwang.adapter.QiYeRCAdapter_ddNew;
 import com.bm.chengshiyoutian.youlaiwang.bean.DingDan1Bean;
 import com.bm.chengshiyoutian.youlaiwang.bean.GouWuCheBeanNum;
+import com.bm.chengshiyoutian.youlaiwang.bean.QiYeRenZhengBean;
 import com.bm.chengshiyoutian.youlaiwang.bean.ShangPinXQ1DaiPingLun;
 import com.bm.chengshiyoutian.youlaiwang.bean.ShangPingXIangQIng1BuDaiPingLun;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.activity.GouwuActivity;
@@ -33,6 +45,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -46,6 +59,9 @@ import static com.bm.chengshiyoutian.youlaiwang.R.id.isAllSelect;
 import static com.bm.chengshiyoutian.youlaiwang.R.id.iv;
 import static com.bm.chengshiyoutian.youlaiwang.R.id.iv_shoucang;
 import static com.bm.chengshiyoutian.youlaiwang.R.id.lv;
+import static com.bm.chengshiyoutian.youlaiwang.R.id.rc;
+import static com.bm.chengshiyoutian.youlaiwang.R.id.rc_zhengJian;
+import static com.bm.chengshiyoutian.youlaiwang.R.id.sign;
 import static com.bm.chengshiyoutian.youlaiwang.R.id.tv_count;
 import static com.bm.chengshiyoutian.youlaiwang.R.id.tv_money;
 import static com.bm.chengshiyoutian.youlaiwang.activity.MainActivity.sp;
@@ -862,7 +878,38 @@ public class DateModel {
     }
 
 
+    //获取企业认证的信息
+    public void getResMessage(String token,final  ICallBack callBack) {
+        Request<String> stringRequest = NoHttp.createStringRequest(MyRes.BASE_URL + "api/user/company");
+        stringRequest.addHeader("Authorization", token);
+        CallServer.getInstance().add(1, stringRequest, new OnResponseListener() {
+            @Override
+            public void onStart(int what) {
 
+            }
+
+            @Override
+            public void onSucceed(int what, com.yanzhenjie.nohttp.rest.Response response) {
+                if (response.responseCode()!=200)
+                {
+                    callBack.failed("服务器异常："+response.responseCode());
+                    return;
+                }
+                callBack.succesed(response.get().toString());
+            }
+
+            @Override
+            public void onFailed(int what, com.yanzhenjie.nohttp.rest.Response response) {
+                callBack.failed("联网失败");
+            }
+
+            @Override
+            public void onFinish(int what) {
+
+            }
+        });
+
+    }
 
 
 

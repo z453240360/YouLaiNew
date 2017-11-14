@@ -601,4 +601,35 @@ public class Present {
 
         });
     }
+
+
+    //获取订单状态
+    public void getResMessage(String token){
+        iMainView.showLoading();
+        dateModel.getResMessage(token,new ICallBack() {
+            @Override
+            public void succesed(String s) {
+                iMainView.getCode(s);
+                iMainView.cancelLoading();
+            }
+
+            @Override
+            public void failed(String s) {
+                iMainView.cancelLoading();
+                iMainView.showFaliure(s);
+            }
+
+            @Override
+            public void netState(String s) {
+
+            }
+
+        });
+    }
+
+
+
+
+
+
 }

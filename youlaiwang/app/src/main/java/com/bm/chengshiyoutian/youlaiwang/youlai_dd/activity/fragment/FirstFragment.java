@@ -276,6 +276,10 @@ public class FirstFragment extends Fragment implements IMainView, AMapLocationLi
         bannerTotal.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
+                if ((firstBanner.get(position).getBanner_open_type()+"").equals("")){
+                    return;
+                }
+
 
                 if (firstBanner != null && firstBanner.size() > 0) {
                     if (firstBanner.get(position).getBanner_open_type() == 1) {//商品

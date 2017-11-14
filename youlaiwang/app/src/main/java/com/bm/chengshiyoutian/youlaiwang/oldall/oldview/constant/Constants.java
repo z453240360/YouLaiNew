@@ -36,8 +36,11 @@ public class Constants {
     //public static final String BASE_URL = "http://10.58.174.192:84";
 
 
-    //new
-    public static final String BASE_URL = "http://govadmin.youlainet.com";
+    //正式环境
+//    public static final String BASE_URL = "http://govadmin.youlainet.com";
+
+    //    http://120.55.58.196:8011/----测试版地址
+    public static final String BASE_URL = "http://120.55.58.196:8011";
 
     /**
      * 客户服务器ip

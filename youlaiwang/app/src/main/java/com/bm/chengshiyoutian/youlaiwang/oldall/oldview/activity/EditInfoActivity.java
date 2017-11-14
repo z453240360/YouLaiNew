@@ -100,7 +100,7 @@ public class EditInfoActivity extends Activity implements View.OnClickListener, 
 //    @Bind(R.id.et_restaurant_address)
 //    EditText etRestaurantAddress;
     @Bind(R.id.et_restaurant_phone)
-EditText etRestaurantPhone;
+    EditText etRestaurantPhone;
     @Bind(R.id.bt_register)
     Button btSubmit;
 //    @Bind(R.id.tv_area)
@@ -118,7 +118,7 @@ TextView tvRestaurantNameVerify;
 //    @Bind(R.id.tv_district_tverify)
 //    TextView tvDistrictTverify;
     @Bind(R.id.et_licenseNo)
-EditText et_licenseNo;
+    EditText et_licenseNo;
     //上传图片控件
     @Bind(R.id.ll_add_photo)
     LinearLayout ll_add_photo;
@@ -626,6 +626,7 @@ TextView tv_loading;//正在加载
                     e.printStackTrace();
                 }
                 break;
+
             case 6://更新数据
                 try {
                     JSONObject jsonObject = new JSONObject(entity.getContentAsString());
