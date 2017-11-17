@@ -23,10 +23,12 @@ import com.bm.chengshiyoutian.youlaiwang.Utils.ShowToast;
 import com.bm.chengshiyoutian.youlaiwang.activity.GouWuCheActivity;
 import com.bm.chengshiyoutian.youlaiwang.activity.ShangPinXiangQingActivity;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.adapter.LastWeekAdapter;
+import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.bean.AddForLastWeekBean;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.bean.CarBean;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.bean.SevenBean;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.view.MyDataView;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.jaeger.library.StatusBarUtil;
 import com.yanzhenjie.nohttp.NoHttp;
 import com.yanzhenjie.nohttp.rest.OnResponseListener;
@@ -64,7 +66,7 @@ public class LastWeekActivity_dd extends AppCompatActivity {
     private SharedPreferences sp;
     private LastWeekAdapter adapter;
     private LinearLayoutManager manager;
-    private boolean flag ;
+    private boolean flag;
     private int tag = 1;
 
     private List<SevenBean.DataBeanX.DataBean> data = new ArrayList<>();
@@ -91,14 +93,14 @@ public class LastWeekActivity_dd extends AppCompatActivity {
         cb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (flag){
+                if (flag) {
                     adapter.isSelectAll(true);
                     cb.setImageResource(R.mipmap.gouwuche_xuanzhohng2);
-                    flag=false;
-                }else{
+                    flag = false;
+                } else {
                     adapter.isSelectAll(false);
                     cb.setImageResource(R.mipmap.shezhi_weixuanzhong);
-                    flag=true;
+                    flag = true;
                 }
             }
         });
@@ -115,13 +117,13 @@ public class LastWeekActivity_dd extends AppCompatActivity {
             }
 
             @Override
-            public void onCheckBoxChanged(int pos,boolean b) {
-                if (b){
+            public void onCheckBoxChanged(int pos, boolean b) {
+                if (b) {
                     cb.setImageResource(R.mipmap.gouwuche_xuanzhohng2);
-                    flag=false;
-                }else{
+                    flag = false;
+                } else {
                     cb.setImageResource(R.mipmap.shezhi_weixuanzhong);
-                    flag=true;
+                    flag = true;
                 }
             }
 
@@ -132,7 +134,6 @@ public class LastWeekActivity_dd extends AppCompatActivity {
                 moneyTotle.setText("￥ " + format);
             }
         });
-
 
 
         mBtnTotle.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +151,7 @@ public class LastWeekActivity_dd extends AppCompatActivity {
         sp = getSharedPreferences(MyRes.CONFIG, 0);
         token = sp.getString(MyRes.TOKEN, "");
         Authorization = "Bearer " + token;
-        if (token.equals("")||token.equals("kong")){
+        if (token.equals("") || token.equals("kong")) {
             ShowToast.showToast("请登陆");
             startActivity(new Intent(this, Login_ddActivity.class));
             return;
@@ -262,52 +263,60 @@ public class LastWeekActivity_dd extends AppCompatActivity {
             public void onSucceed(int what, Response response) {
 
                 int responseCode = response.responseCode();
-                if (responseCode!=200){
-                    ShowToast.showToast("服务器异常："+responseCode);
+                if (responseCode != 200) {
+                    ShowToast.showToast("服务器异常：" + responseCode);
                     return;
                 }
 
 
                 String weekDays = response.get().toString();
-                Gson gson = new Gson();
-                SevenBean sevenBean = gson.fromJson(weekDays, SevenBean.class);
-                SevenBean.DataBeanX.DateBean date = sevenBean.getData().getDate();
 
-                String one = date.getOne();
-                String two = date.getTwo();
-                String three = date.getThree();
-                String four = date.getFour();
-                String five = date.getFive();
-                String six = date.getSix();
-                String seven = date.getSeven();
-
-                dataList.clear();
-                dataList.add(seven);
-                dataList.add(six);
-                dataList.add(five);
-                dataList.add(four);
-                dataList.add(three);
-                dataList.add(two);
-                dataList.add(one);
-
-                myDataView.setWeeks(dataList);
-
-                //设置点击的日期
-                String data1 = myDataView.getData(one);
-                myDataView.getmTxt_yesterday().setText(data1);
+                try {
 
 
-                mData.clear();
-                adapter.notifyDataSetChanged();
-                //获取列表数据
-                data = sevenBean.getData().getData();
-                for (int i = 0; i < data.size(); i++) {
-                    List<SevenBean.DataBeanX.DataBean.GoodsBean> goods = data.get(i).getGoods();
-                    mData.addAll(goods);
+                    Gson gson = new Gson();
+                    SevenBean sevenBean = gson.fromJson(weekDays, SevenBean.class);
+                    SevenBean.DataBeanX.DateBean date = sevenBean.getData().getDate();
+
+                    String one = date.getOne();
+                    String two = date.getTwo();
+                    String three = date.getThree();
+                    String four = date.getFour();
+                    String five = date.getFive();
+                    String six = date.getSix();
+                    String seven = date.getSeven();
+
+                    dataList.clear();
+                    dataList.add(seven);
+                    dataList.add(six);
+                    dataList.add(five);
+                    dataList.add(four);
+                    dataList.add(three);
+                    dataList.add(two);
+                    dataList.add(one);
+
+                    myDataView.setWeeks(dataList);
+
+                    //设置点击的日期
+                    String data1 = myDataView.getData(one);
+                    myDataView.getmTxt_yesterday().setText(data1);
+
+
+                    mData.clear();
+                    adapter.notifyDataSetChanged();
+                    //获取列表数据
+                    data = sevenBean.getData().getData();
+                    for (int i = 0; i < data.size(); i++) {
+                        List<SevenBean.DataBeanX.DataBean.GoodsBean> goods = data.get(i).getGoods();
+                        mData.addAll(goods);
+                    }
+
+                    isShowTxt(mData);
+                    adapter.notifyDataSetChanged();
+
+                } catch (JsonSyntaxException e) {
+                    ShowToast.showToast("数据解析异常");
                 }
-
-                isShowTxt(mData);
-                adapter.notifyDataSetChanged();
 
             }
 
@@ -338,34 +347,40 @@ public class LastWeekActivity_dd extends AppCompatActivity {
             @Override
             public void onSucceed(int what, Response response) {
 
-                int responseCode = response.responseCode();
-                if (responseCode!=200){
-                    ShowToast.showToast("服务器异常："+responseCode);
-                    return;
+
+                try {
+
+
+                    int responseCode = response.responseCode();
+                    if (responseCode != 200) {
+                        ShowToast.showToast("服务器异常：" + responseCode);
+                        return;
+                    }
+
+                    mData.clear();
+
+                    String weekDays = response.get().toString();
+                    Gson gson = new Gson();
+                    SevenBean sevenBean = gson.fromJson(weekDays, SevenBean.class);
+                    SevenBean.DataBeanX.DateBean date = sevenBean.getData().getDate();
+
+                    //设置点击的日期
+                    String data1 = myDataView.getData(dataList.get(pos));
+                    myDataView.getmTxt_yesterday().setText(data1);
+
+
+                    //获取列表数据
+                    data = sevenBean.getData().getData();
+                    for (int i = 0; i < data.size(); i++) {
+                        List<SevenBean.DataBeanX.DataBean.GoodsBean> goods = data.get(i).getGoods();
+                        mData.addAll(goods);
+                    }
+                    isShowTxt(mData);
+                    adapter.notifyDataSetChanged();
+
+                } catch (JsonSyntaxException e) {
+                    ShowToast.showToast("数据解析异常");
                 }
-
-                mData.clear();
-
-                String weekDays = response.get().toString();
-                Gson gson = new Gson();
-                SevenBean sevenBean = gson.fromJson(weekDays, SevenBean.class);
-                SevenBean.DataBeanX.DateBean date = sevenBean.getData().getDate();
-
-                //设置点击的日期
-                String data1 = myDataView.getData(dataList.get(pos));
-                myDataView.getmTxt_yesterday().setText(data1);
-
-
-                //获取列表数据
-                data = sevenBean.getData().getData();
-                for (int i = 0; i < data.size(); i++) {
-                    List<SevenBean.DataBeanX.DataBean.GoodsBean> goods = data.get(i).getGoods();
-                    mData.addAll(goods);
-                }
-                isShowTxt(mData);
-                adapter.notifyDataSetChanged();
-
-
             }
 
             @Override
@@ -382,7 +397,7 @@ public class LastWeekActivity_dd extends AppCompatActivity {
     //添加购物车
     public void addCar(String s) {
 
-        if (s.equals("")){
+        if (s.equals("")) {
             ShowToast.showToast("您没有选任何商品哦");
             return;
         }
@@ -401,23 +416,28 @@ public class LastWeekActivity_dd extends AppCompatActivity {
             @Override
             public void onSucceed(int what, Response response) {
 
-                int responseCode = response.responseCode();
-                if (responseCode!=200){
-                    ShowToast.showToast("服务器异常："+responseCode);
-                    return;
+                try {
+                    int responseCode = response.responseCode();
+                    if (responseCode != 200) {
+                        ShowToast.showToast("服务器异常：" + responseCode);
+                        return;
+                    }
+
+                    String s1 = response.get().toString();
+
+                    Gson gson = new Gson();
+                    AddForLastWeekBean carBean = gson.fromJson(s1, AddForLastWeekBean.class);
+                    int code = carBean.getCode();
+                    if (code != 200) {
+                        return;
+                    }
+
+                    startActivity(new Intent(LastWeekActivity_dd.this, GouWuCheActivity.class));
+                    ShowToast.showToast(carBean.getMsg() + "");
+
+                } catch (JsonSyntaxException e) {
+                    ShowToast.showToast("数据解析异常");
                 }
-
-                String s1 = response.get().toString();
-
-                Gson gson = new Gson();
-                CarBean carBean = gson.fromJson(s1, CarBean.class);
-                int code = carBean.getCode();
-                if (code!=200){
-                    return;
-                }
-
-                startActivity(new Intent(LastWeekActivity_dd.this, GouWuCheActivity.class));
-                ShowToast.showToast(carBean.getMsg()+"");
             }
 
             @Override

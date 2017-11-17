@@ -421,7 +421,7 @@ public class FirstFragment extends Fragment implements IMainView, AMapLocationLi
                 break;
             //PLUS会员
             case R.id.mBtn_plushuiyuan:
-                startActivity(new Intent(getActivity(), BuyRecodeActivity.class));
+//                startActivity(new Intent(getActivity(), BuyRecodeActivity.class));
 //                startActivity(new Intent(getActivity(), GouwuActivity.class));
                 break;
             //政府公告

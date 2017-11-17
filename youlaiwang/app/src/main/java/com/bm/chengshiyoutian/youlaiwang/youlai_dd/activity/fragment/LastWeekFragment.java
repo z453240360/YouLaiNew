@@ -27,6 +27,7 @@ import com.bm.chengshiyoutian.youlaiwang.adapter.ShangPinAdapter2;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.activity.LastWeekActivity_dd;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.activity.Login_ddActivity;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.adapter.LastWeekAdapter;
+import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.bean.AddForLastWeekBean;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.bean.CarBean;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.bean.SevenBean;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.utils.ColorState;
@@ -107,7 +108,10 @@ public class LastWeekFragment extends Fragment {
             isLogin.isLogin();
             return;
         } else {
+            data.clear();
+            mData.clear();
             getLastWeek("2017-9-9");
+
         }
 
     }
@@ -470,7 +474,7 @@ public class LastWeekFragment extends Fragment {
                 String s1 = response.get().toString();
 
                 Gson gson = new Gson();
-                CarBean carBean = gson.fromJson(s1, CarBean.class);
+                AddForLastWeekBean carBean = gson.fromJson(s1, AddForLastWeekBean.class);
                 int code = carBean.getCode();
                 if (code != 200) {
                     return;

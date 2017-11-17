@@ -21,7 +21,7 @@
             android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f2f2f2"
+            android:background="#ffffff"
             android:orientation="horizontal"
             android:paddingTop="10dp">
 
@@ -202,8 +202,8 @@
         android:id="@+id/ll_line"
         android:layout_above="@id/ll"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ddd"/>
+        android:layout_height="0.3dp"
+        android:background="#308a8a8a"/>
     <LinearLayout
         android:id="@+id/tb"
         android:layout_alignParentTop="true"

@@ -33,10 +33,8 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ColorState.setWindowStatusBarColorBlue3(this, Color.parseColor("#8fc320"));
         setContentView(R.layout.activity_start);
-
-
     }
 
 
