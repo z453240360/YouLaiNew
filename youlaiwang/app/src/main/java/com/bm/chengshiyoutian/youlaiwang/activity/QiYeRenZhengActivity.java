@@ -367,9 +367,6 @@ public class QiYeRenZhengActivity extends TakePhotoActivity implements View.OnCl
                 rcImages.add(images.get(i).getCompressPath());
             }
             if (pNum == 1) {
-
-
-
                 adapter_ddNew = new QiYeRCAdapter_ddNew(QiYeRenZhengActivity.this, rcImages);
                 rc_zhengJian.setAdapter(adapter_ddNew);
             } else if (pNum == 2) {
@@ -378,15 +375,8 @@ public class QiYeRenZhengActivity extends TakePhotoActivity implements View.OnCl
             }
         }
 
-
-
-
-
         if (images != null && images.size() > 0) {
             final File file = new File(images.get(0).getCompressPath());//文件路径
-
-
-
 
             for (int i = 0; i < images.size(); i++) {
                 images.get(i).getCompressPath();

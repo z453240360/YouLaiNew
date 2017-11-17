@@ -103,27 +103,28 @@
         android:text="搜索记录"
         android:textSize="16dp" />
 
-
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:id="@+id/lv2"
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/xr"
+        android:visibility="gone"
+        android:layout_below="@id/toolbars_longhu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="3dp"
-        android:background="#fff"
-        android:divider="@null"
-        android:dividerHeight="1dp" />
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp" />
+
+
 
 
     <GridView
         android:id="@+id/gv"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:gravity="center"
         android:numColumns="4"
-        android:visibility="gone"></GridView>
+        android:visibility="visible"></GridView>
 
 
     <LinearLayout

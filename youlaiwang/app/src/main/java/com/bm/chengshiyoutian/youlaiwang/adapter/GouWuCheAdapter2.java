@@ -210,7 +210,16 @@ public class GouWuCheAdapter2 extends BaseAdapter {
         viewHolder.tv_name.setText(datas.get(position).getGoods_name() + "");
         viewHolder.danwei.setText(datas.get(position).getSpec_text() + "");
         DecimalFormat df = new DecimalFormat("######0.00");
+
+
+
+
         viewHolder.jiage.setText("¥ " + df.format(datas.get(position).getPrice()) + "");
+
+
+
+
+
         viewHolder.tv_count.setText(datas.get(position).getGoods_num() + "");
         Glide.with(mContext)
                 .load(datas.get(position).getGoods_cover()).centerCrop()

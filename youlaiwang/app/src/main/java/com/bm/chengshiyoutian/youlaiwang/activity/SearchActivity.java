@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -28,21 +29,32 @@ import com.bm.chengshiyoutian.youlaiwang.Utils.MyRes;
 import com.bm.chengshiyoutian.youlaiwang.Utils.ShowToast;
 import com.bm.chengshiyoutian.youlaiwang.adapter.ShangPinAdapter2;
 import com.bm.chengshiyoutian.youlaiwang.adapter.SouSuoJiLuAdapter;
+import com.bm.chengshiyoutian.youlaiwang.bean.ShangPinXQ1DaiPingLun;
 import com.bm.chengshiyoutian.youlaiwang.bean.ShangPinYouBianBean;
 import com.bm.chengshiyoutian.youlaiwang.bean.SouSuoJiLuBean;
+import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.ShoppingCar.ShoppingAdapter;
+import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.activity.HistoryActivity;
+import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.bean.ShoppingCarBean;
+import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.jaeger.library.StatusBarUtil;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.yanzhenjie.nohttp.NoHttp;
 import com.yanzhenjie.nohttp.rest.OnResponseListener;
 import com.yanzhenjie.nohttp.rest.Request;
 import com.yanzhenjie.nohttp.rest.Response;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+import static com.bm.chengshiyoutian.youlaiwang.R.id.ll;
+import static com.bm.chengshiyoutian.youlaiwang.R.id.ll_kong;
+import static com.bm.chengshiyoutian.youlaiwang.R.id.lv2;
 
 
 /**
@@ -52,24 +64,43 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
 
 
+    @Bind(R.id.xr)
+    XRecyclerView xr;
     private EditText et_search;
     private ImageView iv_clear;
-    private PullToRefreshListView lv2;
     String Authorization;
     private TextView tv;
     private GridView gv;
     private TextView tv_finish;
-    SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences;
     private int page = 1;
     private int total = 0;
     private String area_id;
     private LinearLayout layout_kong;
 
+    private long firstTime = 0;
+    private String goodsName = "";
+
+    private ShoppingAdapter adapter3;
+    private List<ShoppingCarBean.DataBeanX.DataBean> allData = new ArrayList<>();
+    private String token;
+    private String areaId;
+    private LinearLayoutManager manager;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        ButterKnife.bind(this);
         initView();
+
+        //商品详情
+        manager = new LinearLayoutManager(this);
+        adapter3 = new ShoppingAdapter(this, allData);
+        xr.setLayoutManager(manager);
+        xr.setAdapter(adapter3);
+
         layout_kong = (LinearLayout) findViewById(R.id.ll_kong);
         sharedPreferences = getSharedPreferences(MyRes.CONFIG, 0);
         StatusBarUtil.setColorForSwipeBack(this, Color.rgb(255, 168, 0), 0);
@@ -79,10 +110,59 @@ public class SearchActivity extends AppCompatActivity {
         area_id = sharedPreferences.getString(MyRes.area_id, "");
         getData();
 
+
+        //商品列表设置加载更多
+        xr.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                allData.clear();
+                page = 1;
+                adapter3.notifyDataSetChanged();
+                getSouSuoData(et_search.getText().toString().trim());
+                xr.refreshComplete();
+            }
+
+            @Override
+            public void onLoadMore() {
+                page++;
+                getSouSuoData(et_search.getText().toString().trim());
+                xr.loadMoreComplete();
+            }
+        });
+
+
+        //商品列表的点击跳转详情事件
+        adapter3.setClicked(new ShoppingAdapter.OnItemClicked() {
+            @Override
+            public void getDetial(int goods_id) {
+                Intent intent = new Intent(SearchActivity.this, ShangPinXiangQingActivity.class);
+                intent.putExtra("token", goods_id + "");
+                startActivityForResult(intent, 100);//请求吗100
+            }
+
+            @Override
+            public void addClicked() {
+            }
+
+            @Override
+            public void reduceClicker() {
+
+            }
+        });
+
     }
 
-    private long firstTime = 0;
-    String goodsName = "";
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 100) {
+                List<ShangPinXQ1DaiPingLun.DataBean.SpecBean> backData = (List<ShangPinXQ1DaiPingLun.DataBean.SpecBean>) data.getSerializableExtra("goodsName");
+                adapter3.refish(backData);
+            }
+        }
+    }
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
@@ -108,10 +188,6 @@ public class SearchActivity extends AppCompatActivity {
         return super.dispatchKeyEvent(event);
     }
 
-    List<ShangPinYouBianBean.DataBeanX.DataBean> datas = new ArrayList<>();
-    ShangPinAdapter2 shangPinAdapter2 = null;
-
-
     private void getSouSuoData(String key) {
         Request<String> stringRequest = NoHttp.createStringRequest(MyRes.BASE_URL + "api/goods/search");
         stringRequest.addHeader("Authorization", Authorization);
@@ -123,58 +199,54 @@ public class SearchActivity extends AppCompatActivity {
             public void onStart(int what) {
                 tv.setVisibility(View.GONE);
                 gv.setVisibility(View.GONE);
-                lv2.setVisibility(View.VISIBLE);
+                layout_kong.setVisibility(View.GONE);
+                xr.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onSucceed(int what, Response response) {
+                if (response.responseCode() != 200) {
+                    ShowToast.showToast("服务器异常：" + response.responseCode());
+                    return;
+                }
+
+
+                Gson gson = new Gson();
                 try {
-                    List<ShangPinYouBianBean.DataBeanX.DataBean> data = GsonUtils.getInstance().fromJson((String) response.get(), ShangPinYouBianBean.class).getData().getData();
-                    total = GsonUtils.getInstance().fromJson((String) response.get(), ShangPinYouBianBean.class).getData().getTotal();
-                    datas.addAll(data);
 
-                    if (datas.size() == 0) {
-                        layout_kong.setVisibility(View.VISIBLE);
-                        return;
-                    } else {
-                        layout_kong.setVisibility(View.GONE);
+                    ShoppingCarBean shoppingCarBean = gson.fromJson(response.get().toString(), ShoppingCarBean.class);
+                    int code = shoppingCarBean.getCode();
+                    if (code != 200) {
+                        Toast.makeText(SearchActivity.this, "" + shoppingCarBean.getMsg(), Toast.LENGTH_SHORT).show();
+//                    dialog.cancel();
                     }
 
+                    List<ShoppingCarBean.DataBeanX.DataBean> data = shoppingCarBean.getData().getData();
 
-                    lv2.setVisibility(View.VISIBLE);
-
-                    if (shangPinAdapter2 == null) {
-                        shangPinAdapter2 = new ShangPinAdapter2(datas, SearchActivity.this, Authorization);
-                        lv2.setAdapter(shangPinAdapter2);
-                        shangPinAdapter2.setOnClicked(new ShangPinAdapter2.OnClicked() {
-                            @Override
-                            public void getIntent(int pos, String goodsId) {
-                                Intent intent = new Intent(SearchActivity.this, ShangPinXiangQingActivity.class);
-                                intent.putExtra("token", datas.get(pos).getGoods_id() + "");
-                                startActivity(intent);
-                            }
-                        });
-
-
+                    if (page == 1) {
+                        if (data.size() == 0) {
+                            layout_kong.setVisibility(View.VISIBLE);
+                            return;
+                        } else {
+                        }
                     } else {
-                        shangPinAdapter2.setData1(datas);
-                        shangPinAdapter2.notifyDataSetChanged();
+                        if (data.size() == 0) {
+                            ShowToast.showToast("已经显示全部");
+                            return;
+                        }
                     }
 
-                    lv2.onRefreshComplete();
+                    allData.addAll(data);
+                    adapter3.notifyDataSetChanged();
 
-                } catch (Exception e) {
-                    ShowToast.showToast("数据异常");
+                } catch (JsonSyntaxException e) {
+                    ShowToast.showToast("数据解析异常");
                 }
             }
 
             @Override
             public void onFailed(int what, Response response) {
                 ShowToast.showToast("联网失败");
-                lv2.onRefreshComplete();
-                if (page > 1) {
-                    page = page - 1;
-                }
             }
 
             @Override
@@ -199,7 +271,6 @@ public class SearchActivity extends AppCompatActivity {
             public void onSucceed(int what, Response response) {
 
                 gv.setVisibility(View.GONE);
-                Log.d("sld", (String) response.get());
                 try {
                     data_jilu = GsonUtils.getInstance().fromJson((String) response.get(), SouSuoJiLuBean.class).getData();
                     if (data_jilu.size() == 0) {
@@ -235,27 +306,31 @@ public class SearchActivity extends AppCompatActivity {
     private void initView() {
         et_search = (EditText) findViewById(R.id.et_search);
         iv_clear = (ImageView) findViewById(R.id.iv_clear);
-        lv2 = (PullToRefreshListView) findViewById(R.id.lv2);
-        lv2.setVisibility(View.GONE);
         tv = (TextView) findViewById(R.id.tv);
         iv_clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lv2.setVisibility(View.GONE);
-                datas.clear();
                 page = 1;
+                allData.clear();
+
+                adapter3.notifyDataSetChanged();
+                gv.setVisibility(View.VISIBLE);
+                layout_kong.setVisibility(View.GONE);
+                xr.setVisibility(View.GONE);
                 et_search.setText("");
                 getData();
             }
         });
         gv = (GridView) findViewById(R.id.gv);
+
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                allData.clear();
+                adapter3.notifyDataSetChanged();
                 String sh_name = data_jilu.get(position).getSh_name();
                 et_search.setText(sh_name);
                 page = 1;
-                datas.clear();
                 goodsName = sh_name;
                 getSouSuoData(sh_name);
             }
@@ -265,51 +340,18 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-
             }
         });
 
-        lv2.setMode(PullToRefreshBase.Mode.BOTH);
-        lv2.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
-            @Override
-            public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
-                page = 1;
-                datas.clear();
-                getSouSuoData(goodsName);
-            }
-
-            @Override
-            public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
-                page = page + 1;
-                if (datas.size() < total) {
-                    getSouSuoData(goodsName);
-                } else if (datas.size() == total) {
-                    lv2.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            page = page - 1;
-                            lv2.onRefreshComplete();
-                            ShowToast.showToast("已经到底了");
-                        }
-                    }, 500);
-                }
-
-            }
-        });
 
     }
 
     private void submit() {
-        // validate
         String search = et_search.getText().toString().trim();
         if (TextUtils.isEmpty(search)) {
             Toast.makeText(this, "search不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        // TODO validate success, do something
-
-
     }
 }
 

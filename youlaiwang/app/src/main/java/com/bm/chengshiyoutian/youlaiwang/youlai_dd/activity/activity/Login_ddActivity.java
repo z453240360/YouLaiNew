@@ -8,8 +8,10 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -25,12 +27,16 @@ import com.android.pc.ioc.internet.FastHttpHander;
 import com.android.pc.ioc.internet.InternetConfig;
 import com.android.pc.ioc.internet.ResponseEntity;
 import com.bm.chengshiyoutian.youlaiwang.R;
+import com.bm.chengshiyoutian.youlaiwang.Utils.CallServer;
+import com.bm.chengshiyoutian.youlaiwang.Utils.GsonUtils;
 import com.bm.chengshiyoutian.youlaiwang.Utils.MyRes;
 import com.bm.chengshiyoutian.youlaiwang.Utils.ShowToast;
 import com.bm.chengshiyoutian.youlaiwang.activity.LoginActivity;
+import com.bm.chengshiyoutian.youlaiwang.activity.XiangQingActivity;
 import com.bm.chengshiyoutian.youlaiwang.activity.ZhaoHuiMIMaActivity;
 import com.bm.chengshiyoutian.youlaiwang.app.MyApplication;
 import com.bm.chengshiyoutian.youlaiwang.bean.DengLuBean1;
+import com.bm.chengshiyoutian.youlaiwang.bean.RenZhenBean;
 import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.bean.RestaurantBean;
 import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.constant.Constants;
 import com.bm.chengshiyoutian.youlaiwang.oldall.oldview.utils.JPushAlias;
@@ -40,6 +46,11 @@ import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.model.IMainView;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.model.Present;
 import com.bm.chengshiyoutian.youlaiwang.youlai_dd.activity.utils.ColorState;
 import com.google.gson.Gson;
+import com.yanzhenjie.nohttp.NoHttp;
+import com.yanzhenjie.nohttp.RequestMethod;
+import com.yanzhenjie.nohttp.rest.OnResponseListener;
+import com.yanzhenjie.nohttp.rest.Request;
+import com.yanzhenjie.nohttp.rest.Response;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,6 +62,8 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.bm.chengshiyoutian.youlaiwang.activity.MainActivity.sp;
 
 public class Login_ddActivity extends AppCompatActivity implements IMainView {
 
@@ -211,12 +224,13 @@ public class Login_ddActivity extends AppCompatActivity implements IMainView {
             edit.putString(MyRes.MY_TOKEN, "Bearer " + token);
             edit.commit();
             SPUtil.put(this, Constants.PHONENUM, phoneNum.getText().toString().trim());
-            login();
+//            login();
+
+            RenZhen();
             dialogs.show();
 //            finish();
         }
     }
-
 
 
     /**
@@ -383,7 +397,6 @@ public class Login_ddActivity extends AppCompatActivity implements IMainView {
         SPUtil.put(this, Constants.PHONENUM, phone);
     }
 
-
     @InjectHttpErr
     private void err(ResponseEntity entity) {
 
@@ -398,5 +411,47 @@ public class Login_ddActivity extends AppCompatActivity implements IMainView {
         config.setToDefaults();
         res.updateConfiguration(config, res.getDisplayMetrics());
         return res;
+    }
+
+
+    private void RenZhen() {
+
+        Request<String> stringRequest = NoHttp.createStringRequest(MyRes.BASE_URL + "api/users/isAuth", RequestMethod.GET);
+        stringRequest.addHeader("Authorization", sp.getString(MyRes.MY_TOKEN, ""));
+        CallServer.getInstance().add(1, stringRequest, new OnResponseListener() {
+            @Override
+            public void onStart(int what) {
+                dialogs.show();
+            }
+
+            @Override
+            public void onSucceed(int what, Response response) {
+                if (response.get() != null) {
+                    try {
+                        RenZhenBean renZhenBean = GsonUtils.getInstance().fromJson((String) response.get(), RenZhenBean.class);
+                        if (renZhenBean != null) {
+                            if (renZhenBean.data.isAuth == 1) {//进去
+                                login();
+                            } else {
+                                finish();
+                            }
+                        }
+                    } catch (Exception e) {
+
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailed(int what, Response response) {
+                Log.e("shouye", "失败");
+            }
+
+            @Override
+            public void onFinish(int what) {
+                dialogs.dismiss();
+            }
+        });
     }
 }

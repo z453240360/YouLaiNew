@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="#ffffff"
     android:orientation="vertical">
 
 
@@ -46,8 +46,8 @@
             android:id="@+id/lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="#508a8a8a"
-            android:dividerHeight="1dp"
+            android:divider="#308a8a8a"
+            android:dividerHeight="0.3dp"
 
             android:visibility="visible" />
     </LinearLayout>

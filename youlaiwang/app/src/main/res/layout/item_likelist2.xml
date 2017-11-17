@@ -2,68 +2,79 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:gravity="center_vertical"
     android:background="#ffffff"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="30dp">
 
-
-
-
     <TextView
-        android:layout_marginLeft="10dp"
-        android:gravity="center"
-        android:id="@+id/mTxt_name"
-        android:textSize="10sp"
-        android:textColor="#fb6800"
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:background="#308a8a8a"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
 
-    <TextView
-        android:layout_marginLeft="5dp"
-        android:gravity="center"
-        android:id="@+id/mTxt_name2"
-        android:textSize="10sp"
-        android:textColor="#9d9d9d"
-        android:text="商品名称 "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <TextView
-        android:textColor="#9d9d9d"
-        android:gravity="center"
-        android:id="@+id/mTxt_name3"
-        android:textSize="10sp"
-        android:text="商品名称 "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:id="@+id/mTxt_name"
+            android:textSize="10sp"
+            android:textColor="#fb6800"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
-    <ImageView
-        android:scaleType="fitXY"
-        android:src="@mipmap/sousuo_jianshao"
-        android:id="@+id/mImg_reduce"
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:id="@+id/mTxt_name2"
+            android:textSize="10sp"
+            android:textColor="#9d9d9d"
+            android:text="商品名称 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:gravity="center"
-        android:id="@+id/mTxt_test"
-        android:text="0 "
-        android:paddingRight="5dp"
-        android:paddingLeft="5dp"
-        android:textSize="12sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#9d9d9d"
+            android:gravity="center"
+            android:id="@+id/mTxt_name3"
+            android:textSize="10sp"
+            android:text="商品名称 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:id="@+id/mImg_add"
-        android:src="@mipmap/sousuo_zengjia"
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@mipmap/sousuo_jianshao"
+            android:id="@+id/mImg_reduce"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/mTxt_test"
+            android:text="0 "
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/mImg_add"
+            android:src="@mipmap/sousuo_zengjia"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+    </LinearLayout>
+
 
 
 </LinearLayout>

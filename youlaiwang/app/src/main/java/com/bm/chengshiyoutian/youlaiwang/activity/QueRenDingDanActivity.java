@@ -76,7 +76,7 @@ public class QueRenDingDanActivity extends AppCompatActivity implements View.OnC
     private TextView tv_pay2, tv_payWeiXin;
     private TextView tv_pay_money;
     private String cartIds, addressId;
-    private TextView tv_money;
+    private TextView tv_money,tv_money2;
     private SharedPreferences sp;
     private List<QueRenDingDanBena1.DataBean.GoodsDataBean> goods_one;
     private QueRenDingDanAdapter1 adapter1;
@@ -221,8 +221,9 @@ public class QueRenDingDanActivity extends AppCompatActivity implements View.OnC
             }
         });
         tv_money = (TextView) findViewById(R.id.tv_money);
-
+        tv_money2 = (TextView) findViewById(R.id.tv_money2);
         tv_money.setText(df.format(data.getMoney()) + "");
+        tv_money2.setText("(为您节省了"+df.format(data.getDiscount_money())+"元)");
     }
 
     int x = 1;
@@ -552,7 +553,7 @@ public class QueRenDingDanActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(QueRenDingDanActivity.this,WoDeDingDanActivity.class);
-                intent.putExtra("current",1);
+                intent.putExtra("current",4);
                 if (alertDialog != null) {
                     alertDialog.dismiss();
                 }
@@ -625,7 +626,6 @@ public class QueRenDingDanActivity extends AppCompatActivity implements View.OnC
     public void alipay(final String data) {
 
         // 完整的符合支付宝参数规范的订单信息
-
         Runnable payRunnable = new Runnable() {
             @Override
             public void run() {

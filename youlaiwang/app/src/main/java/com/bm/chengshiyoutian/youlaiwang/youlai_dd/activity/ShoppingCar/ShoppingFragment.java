@@ -7,7 +7,9 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -60,6 +62,7 @@ import butterknife.OnClick;
 
 import static android.app.Activity.RESULT_OK;
 import static com.bm.chengshiyoutian.youlaiwang.R.id.btn_new;
+import static com.bm.chengshiyoutian.youlaiwang.R.id.gouwuche;
 import static com.bm.chengshiyoutian.youlaiwang.R.id.storeId;
 import static com.bm.chengshiyoutian.youlaiwang.activity.MainActivity.mIv_gouwuche;
 import static com.bm.chengshiyoutian.youlaiwang.activity.MainActivity.sp;
@@ -249,6 +252,17 @@ public class ShoppingFragment extends Fragment implements IMainView {
                 MainActivity.getData1();
             }
         });
+
+
+        String string = sp.getString("myDdJump", "null");
+
+        if (string.equals("gengduo1")) {
+            ByNew();
+        } else if (string.equals("gengduo2")) {
+            ByPro();
+        }
+
+        sp.edit().putString("myDdJump", "null").commit();
     }
 
 
@@ -517,7 +531,7 @@ public class ShoppingFragment extends Fragment implements IMainView {
                 isHasData.setVisibility(View.GONE);
                 rv.setVisibility(View.VISIBLE);
                 if (data.size() == 0) {
-                    ShowToast.showToast("已经显示全部");
+                    Snackbar.make(rv,"已经显示全部商品",Snackbar.LENGTH_SHORT).show();
                     return;
                 }
             }
@@ -540,6 +554,7 @@ public class ShoppingFragment extends Fragment implements IMainView {
         if (string.equals("")){
 
         }else {
+
             allAlassTwoData.clear();
             allClassOneData.clear();
             allData.clear();
@@ -581,6 +596,8 @@ public class ShoppingFragment extends Fragment implements IMainView {
             }
 
             if (!gouwuche.equals("")){
+                page=1;
+                initButton();
                 allData.clear();
                 adapter3.notifyDataSetChanged();
                 present.getYouBianData(token, classTwoId, classOneId, state, orderBy, "", page, lng, lat, areaId);

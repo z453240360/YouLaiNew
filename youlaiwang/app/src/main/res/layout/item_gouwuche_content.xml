@@ -152,9 +152,8 @@
 
 
     <LinearLayout
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#f2f2f2"></LinearLayout>
+        android:layout_height="0.3dp"
+        android:background="#308a8a8a"></LinearLayout>
 
 </LinearLayout>

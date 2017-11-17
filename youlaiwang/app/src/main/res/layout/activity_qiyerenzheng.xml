@@ -38,6 +38,7 @@
         android:visibility="visible">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -57,6 +58,7 @@
                     android:textSize="16dp" />
 
                 <EditText
+
                     android:id="@+id/et_bianHao"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp51"
@@ -64,7 +66,7 @@
                     android:layout_marginRight="10dp"
                     android:background="#fff"
                     android:hint="食品经营许可证编号"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
 
@@ -74,6 +76,7 @@
                     android:background="#f2f2f2"/>
 
                 <TextView
+                    android:paddingLeft="10dp"
                     android:id="@+id/et_youXiaoQi"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp51"
@@ -82,7 +85,6 @@
                     android:background="#fff"
                     android:gravity="center_vertical"
                     android:hint="食品经营许可证有效期"
-                    android:padding="1dp"
                     android:textColor="#333"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
@@ -93,6 +95,7 @@
                     android:background="#f2f2f2"/>
 
                 <EditText
+                    android:paddingLeft="10dp"
                     android:id="@+id/et_qiTaBianHao"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp51"
@@ -100,7 +103,6 @@
                     android:layout_marginRight="10dp"
                     android:background="#fff"
                     android:hint="营业执照或其它经营许可证件号"
-                    android:padding="1dp"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
 
@@ -118,7 +120,7 @@
                     android:background="#fff"
                     android:gravity="center_vertical"
                     android:hint="营业执照或其它证件有效期"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColor="#333"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
@@ -136,7 +138,7 @@
                     android:background="#fff"
                     android:gravity="center_vertical"
                     android:hint="健康许可证编号"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColor="#333"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
@@ -154,7 +156,7 @@
                     android:background="#fff"
                     android:gravity="center_vertical"
                     android:hint="健康许可证有效期"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColor="#333"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
@@ -206,7 +208,7 @@
                     android:layout_marginRight="10dp"
                     android:background="#fff"
                     android:hint="企业名称"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
 
@@ -224,7 +226,7 @@
                     android:layout_marginRight="10dp"
                     android:background="#fff"
                     android:hint="主体业态"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
 
@@ -248,7 +250,7 @@
                         android:gravity="center_vertical"
                         android:hint="所在地区"
                         android:textColor="#333"
-                        android:padding="1dp"
+                        android:paddingLeft="10dp"
                         android:textColorHint="#ddd"
                         android:textSize="14dp" />
                     <ImageView
@@ -273,7 +275,7 @@
                     android:layout_marginRight="10dp"
                     android:background="#fff"
                     android:hint="企业详细地址"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
 
@@ -290,7 +292,7 @@
                     android:layout_marginRight="10dp"
                     android:background="#fff"
                     android:hint="企业联系人"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
 
@@ -308,7 +310,7 @@
                     android:background="#fff"
                     android:hint="联系人电话"
                     android:inputType="phone"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
 
@@ -326,7 +328,7 @@
                     android:background="#fff"
                     android:hint="企业电话"
                     android:inputType="phone"
-                    android:padding="1dp"
+                    android:paddingLeft="10dp"
                     android:textColorHint="#ddd"
                     android:textSize="14dp" />
 

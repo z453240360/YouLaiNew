@@ -43,7 +43,14 @@ public class ClassOneAdapter extends RecyclerView.Adapter<ClassOneAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return mDatas == null ? 0 : mDatas.size();
+        if (mDatas!=null){
+            if (mDatas.size()>9){
+                return 9;
+            }else {
+                return mDatas.size();
+            }
+        }
+        return 0;
     }
 
     //初始化布局,创建ViewHolder

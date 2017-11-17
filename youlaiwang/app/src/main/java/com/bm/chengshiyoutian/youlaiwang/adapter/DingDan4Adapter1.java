@@ -4,6 +4,7 @@ package com.bm.chengshiyoutian.youlaiwang.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.bm.chengshiyoutian.youlaiwang.activity.DianPuShouYeActivity;
 import com.bm.chengshiyoutian.youlaiwang.activity.DingDanXiangQingActivity;
 import com.bm.chengshiyoutian.youlaiwang.activity.KuaiSuXiaDanActivity;
 import com.bm.chengshiyoutian.youlaiwang.activity.PingJiaActivity;
+import com.bm.chengshiyoutian.youlaiwang.activity.ZhiFuFangShiActivity;
 import com.bm.chengshiyoutian.youlaiwang.bean.DingDan1Bean;
 import com.bm.chengshiyoutian.youlaiwang.view.MylistView;
 
@@ -67,7 +69,7 @@ public class DingDan4Adapter1 extends BaseAdapter {
 
         final int x = position;
         View view;
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -81,14 +83,44 @@ public class DingDan4Adapter1 extends BaseAdapter {
             viewHolder.name = (TextView) view.findViewById(R.id.name);
             viewHolder.tv = (TextView) view.findViewById(R.id.tv);
             viewHolder.lv = (MylistView) view.findViewById(R.id.lv);
+            viewHolder.gotoPay = (TextView) view.findViewById(R.id.gotoPay);
             view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
+
+
+        final int order_state = datas.get(position).getIs_payment();
+
+        if (order_state==1){
+            viewHolder.gotoPay.setVisibility(View.VISIBLE);
+        }else {
+            viewHolder.gotoPay.setVisibility(View.GONE);
+        }
+
+        viewHolder.gotoPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(mContext, ZhiFuFangShiActivity.class);
+                mIntent.putExtra("orderId", datas.get(position).getOrder_id() + "");
+                String money = viewHolder.tv_money.getText().toString();
+
+                mIntent.putExtra("money", money);
+                mContext.startActivity(mIntent);
+            }
+        });
+
+
         viewHolder.tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (order_state==1){
+                    Snackbar.make(v,"需要完成支付才可评价",Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Intent intent = new Intent(mContext, PingJiaActivity.class);
                 intent.putExtra("id", datas.get(position).getOrder_id() + "");
                 mContext.startActivity(intent);
@@ -137,7 +169,7 @@ public class DingDan4Adapter1 extends BaseAdapter {
 
     public class ViewHolder {
 
-        public TextView name, tv_num, tv_money, tv, tv_xiangqing;
+        public TextView name, tv_num, tv_money, tv, tv_xiangqing,gotoPay;
         MylistView lv;
 
 

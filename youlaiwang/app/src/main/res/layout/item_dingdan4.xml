@@ -164,6 +164,20 @@
             android:visibility="invisible" />
 
         <TextView
+
+            android:layout_width="@dimen/dp75"
+            android:layout_height="@dimen/dp35"
+            android:layout_gravity="center"
+            android:background="@color/dongdong2"
+            android:gravity="center"
+            android:padding="1dp"
+
+            android:id="@+id/gotoPay"
+            android:text="付款"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/tv"
             android:layout_width="@dimen/dp75"
             android:layout_height="@dimen/dp35"

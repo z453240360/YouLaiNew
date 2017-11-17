@@ -59,6 +59,16 @@ public class QueRenDingDanBena1 {
 
         private AddressBean address;
         private double money;
+        private double discount_money;
+
+        public double getDiscount_money() {
+            return discount_money;
+        }
+
+        public void setDiscount_money(double discount_money) {
+            this.discount_money = discount_money;
+        }
+
         /**
          * goods : [{"cart_id":1433,"goods_cover":"http://oqv8tlktu.bkt.clouddn.com/45d310cec3bb176a2ac20a7f80db1606.jpg?imageView2/1/w/200/h/200","goods_name":"地瓜粉","goods_num":1,"grade_price_eight":"0.00","grade_price_five":"4.00","grade_price_four":"4.00","grade_price_nine":"0.00","grade_price_one":"5.50","grade_price_seven":"0.00","grade_price_six":"4.00","grade_price_ten":"0.00","grade_price_three":"3.50","grade_price_two":"3.50","price":"5.50","spec_text":"/斤/1斤","store_id":30}]
          * logistics_cost : 10

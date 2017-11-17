@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="#f2f2f2"
     android:orientation="vertical">
 
     <LinearLayout
@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp200"
+            android:layout_height="@dimen/dp180"
             android:background="@mipmap/ditu"
             android:orientation="vertical"
             android:paddingTop="@dimen/dp25">
@@ -93,16 +93,18 @@
 
 
         <LinearLayout
+
             android:background="#fff"
             android:id="@+id/ll_wodedingdan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <TextView
+                android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -111,6 +113,7 @@
                 android:textColor="#333" />
 
             <TextView
+                android:gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_height="match_parent"
@@ -123,24 +126,28 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#ccc"></LinearLayout>
+            android:layout_height="0.3dp"
+            android:background="#308a8a8a"></LinearLayout>
 
 
         <LinearLayout
-
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
             android:background="#fff"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:orientation="horizontal"
-            android:paddingTop="8dp">
+            >
 
 
             <LinearLayout
+                android:gravity="center"
+                android:layout_gravity="center"
                 android:id="@+id/ll_daifukuan"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:padding="10dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -148,15 +155,12 @@
                     android:id="@+id/iv_daifukuan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:src="@mipmap/wode_daifukuan" />
 
                 <TextView
                     android:clickable="false"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="5dp"
                     android:text="待付款"
@@ -167,9 +171,10 @@
 
 
             <LinearLayout
+                android:padding="10dp"
                 android:id="@+id/ll_daifahuo"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -186,7 +191,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:gravity="center"
                     android:paddingTop="5dp"
                     android:text="待发货"
@@ -197,9 +201,10 @@
 
 
             <LinearLayout
+                android:padding="10dp"
                 android:id="@+id/ll_daishouhuo"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -228,6 +233,7 @@
 
 
             <LinearLayout
+                android:padding="10dp"
                 android:id="@+id/ll_daipingjia"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -271,28 +277,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:background="#fff"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
             android:text="常用工具"
             android:textColor="#333" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#ccc" />
+            android:layout_height="0.3dp"
+            android:background="#308a8a8a" />
 
         <LinearLayout
             android:background="#fff"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="@dimen/dp69"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -334,7 +342,7 @@
             <LinearLayout
                 android:id="@+id/ll_dianpu_shoucang"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/dp69"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -365,7 +373,7 @@
             <LinearLayout
                 android:id="@+id/ll_goumaishangpin"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/dp69"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -394,12 +402,12 @@
             </LinearLayout>
 
 
-            -
+
 
             <LinearLayout
                 android:id="@+id/ll_goumaidianpu"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/dp69"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -431,22 +439,22 @@
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#ccc"></LinearLayout>
+            android:layout_height="0.3dp"
+            android:background="#308a8a8a"></LinearLayout>
 
         <LinearLayout
             android:background="#fff"
-            android:paddingTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:orientation="horizontal">
 
             <LinearLayout
-
+                android:gravity="center"
                 android:id="@+id/ll_changjianwenti"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -474,12 +482,11 @@
             </LinearLayout>
 
 
-            -
-
             <LinearLayout
+                android:gravity="center"
                 android:id="@+id/ll_kefudianhua"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -508,9 +515,10 @@
 
 
             <LinearLayout
+                android:gravity="center"
                 android:id="@+id/ll_jubaotousu"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -539,8 +547,9 @@
             </LinearLayout>
 
             <LinearLayout
+                android:gravity="center"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:visibility="visible">
@@ -570,12 +579,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp6"
-            android:background="#fff"></LinearLayout>
-
 
     </LinearLayout>
 </LinearLayout>

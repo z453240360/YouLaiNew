@@ -276,7 +276,7 @@ public class FirstFragment extends Fragment implements IMainView, AMapLocationLi
         bannerTotal.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
-                if ((firstBanner.get(position).getBanner_open_type()+"").equals("")){
+                if (firstBanner.get(position).getBanner_key_id()==0){
                     return;
                 }
 
